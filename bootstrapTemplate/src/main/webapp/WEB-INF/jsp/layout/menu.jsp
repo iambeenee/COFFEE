@@ -49,7 +49,7 @@
 	<div>
 		<c:if test="${empty id }">
 			<a href="#">Login</a>
-			<a href="#">JOIN</a>
+			<a href="memberJoinForm.do">JOIN</a>
 		</c:if>
 		<c:if test="${not empty id }">
 			<a href="logout.do">LogOut</a>
