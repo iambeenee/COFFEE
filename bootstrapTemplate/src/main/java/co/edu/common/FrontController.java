@@ -23,7 +23,7 @@ public class FrontController extends HttpServlet {
 	}
 
 	public void init(ServletConfig config) throws ServletException {
-		// TODO 호출명 저장소
+		// TODO 호출명 저장소 -> 
 		map.put("/main.do", new MainPage()); // 시작페이지
 
 	}
