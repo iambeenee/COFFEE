@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+d<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
 <div align='center'>
 	<div>
-		<h1>회 원 가 입</h1>
+		<h1>JOIN</h1>
 	</div>
 
 	<div>
@@ -13,7 +13,7 @@
 					<tr>
 						<th width="150">아 이 디</th>
 						<td width="700"><input type="text" id="id" name="id" size="60" required="required" placeholder="아이디를 입력해 주세요.">&nbsp;&nbsp;
-							<button type="button" onclick="idCheck()" id="idCheck" value="unChecked">중복체크</button>
+							<button type="button" onclick="idCheck();" id="idCheck" value="No">중복체크</button>
 						</td>
 					</tr>
 					<tr>
@@ -59,7 +59,7 @@
 					let b = xhttp.responseText; // 결과데이터 받는 부분
 					if (b == '1') {
 						alert(id + "는 사용가능한 아이디 입니다.");
-						frm.idCheck.value = "checked";
+						frm.idCheck.value = "Yes";
 						frm.idCheck.style.display = "none";
 						frm.password.focus();
 					} else {

@@ -3,6 +3,7 @@ package co.edu.common;
 import java.io.IOException;
 
 
+
 import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.edu.member.web.MemberJoinForm;
+import co.edu.member.web.MemberLoginForm;
 
 //@WebServlet("/FrontController")
 public class FrontController extends HttpServlet {
@@ -25,8 +27,9 @@ public class FrontController extends HttpServlet {
 	}
 
 	public void init(ServletConfig config) throws ServletException {
-		// TODO 호출명 저장소 -> 패키지 command
+		// 호출명 저장소
 		map.put("/main.do", new MainPage()); // 시작페이지
+		map.put("/memberLoginForm.do", new MemberLoginForm()); // 로그인
 		map.put("/memberJoinForm.do", new MemberJoinForm()); // 회원가입
 
 	}
