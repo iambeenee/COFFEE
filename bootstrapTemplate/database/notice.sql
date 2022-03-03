@@ -12,3 +12,6 @@ create table notice (
      n_date     date            sysdate,
      hit        number(3)       default 0
      );
+     
+--쿼리문
+insert into notice values (notice_seq.nextval, '오픈공지'', '3월30일오픈합니다', sysdate, 0);

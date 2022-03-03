@@ -10,7 +10,14 @@ create table products (
      q_subject  varchar2(50)    not null,
      q_content  varchar2(1000)  not null,
      q_reply    varchar2(1000)  not null,
-     id         varchar2(20)    foreign key for members(id),
+     id         varchar2(30)    foreign key for members(id),
      q_rep      char(1)         default 1,
      q_date     date            sysdate
      );
+ 
+     
+--쿼리문 예시
+
+insert into products values (qna_seq.nextval, '문의', '교환가능하나요', '가능합니다', 'user1', '2', sysdate);
+
+

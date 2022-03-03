@@ -31,6 +31,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 				vo.setAddress(rs.getString("address"));
 				vo.setTel(rs.getString("tel"));
 				vo.setDate(rs.getString("date"));
+				vo.setEmail(rs.getString("email"));
 				vo.setAuthor(rs.getString("author"));
 				members.add(vo);
 			}
@@ -56,6 +57,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 				vo.setName(rs.getString("name"));
 				vo.setAddress(rs.getString("address"));
 				vo.setTel(rs.getString("tel"));
+				vo.setEmail(rs.getString("email"));
 				vo.setDate(rs.getString("date"));
 				vo.setAuthor(rs.getString("author"));
 			}
@@ -71,7 +73,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 	@Override
 	public int insertMember(MemberVO vo) {
 		// 회원 가입
-		String sql = "INSERT INTO MEMBERS VALUES(?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO MEMBERS VALUES(?, ?, ?, ?, ?,?)";
 		int n = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -80,6 +82,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 			psmt.setString(3, vo.getName());
 			psmt.setString(4, vo.getAddress());
 			psmt.setString(5, vo.getTel());
+			psmt.setString(6, vo.getEmail());
 			n = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -92,7 +95,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 	@Override
 	public int updateMember(MemberVO vo) {
 		// 회원정보수정
-		String sql = "UPDATE MEMBERS SET PASSWORD = ?, NAME = ?, ADDRESSS = ?, TEL = ? WHERE ID = ?";
+		String sql = "UPDATE MEMBERS SET PASSWORD = ?, NAME = ?, ADDRESSS = ?, TEL = ?, EMAIL = ? WHERE ID = ?";
 		int n = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -100,7 +103,8 @@ public class MemberServiceImpl extends DAO implements MemberService {
 			psmt.setString(2, vo.getName());
 			psmt.setString(3, vo.getAddress());
 			psmt.setString(4, vo.getTel());
-			psmt.setString(5, vo.getId());
+			psmt.setString(5, vo.getEmail());
+			psmt.setString(6, vo.getId());
 			n = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

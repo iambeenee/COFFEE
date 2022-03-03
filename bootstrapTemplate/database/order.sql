@@ -6,7 +6,9 @@ nominvalue;
 
 create table orders (
 	order_no   number        primary key,
-	id         varchar2(20)  foreign key for members(id),
+	id         varchar2(30)  foreign key for members(id),
 	order_date date          sysdate
 );
 
+--쿼리문
+insert into orders values (order_seq.nextval, 'user1'', sysdate);

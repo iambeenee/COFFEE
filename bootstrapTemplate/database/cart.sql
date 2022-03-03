@@ -7,7 +7,7 @@ nominvalue;
 
 create table cart (
 	cart_num     number        primary key,
-	id           varchar2(20)  foreign key for members(id),
+	id           varchar2(30)  foreign key for members(id),
 	p_no         number(5)     foreign key for prodcuts(p_no),
 	quantity     nember(5)
 );

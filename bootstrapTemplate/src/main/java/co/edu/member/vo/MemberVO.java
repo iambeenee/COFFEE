@@ -7,10 +7,9 @@ public class MemberVO {
 	private String name;
 	private String address;
 	private String tel;
+	private String email;
 	private String date;
 	private String author;
-	
-	//
 	public String getId() {
 		return id;
 	}
@@ -41,6 +40,12 @@ public class MemberVO {
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public String getDate() {
 		return date;
 	}
@@ -53,5 +58,8 @@ public class MemberVO {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
+	
+	//
+	
 	
 }
