@@ -30,7 +30,7 @@
               </li>
             </ul>
             <div class="user_option">
-            <c:if test="${not empty id }">
+            <c:if test="${not empty id and author eq 'user}">
               <a href="#" class="user_link">
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
@@ -91,6 +91,9 @@
               <a href="logout.do" class="order_online">
               LOGOUT
               </a>
+              </c:if>
+              <c:if test="${author eq 'admin }">
+              	<a href="memberList.do"></a>
               </c:if>
             
               <c:if test="${empty id }">

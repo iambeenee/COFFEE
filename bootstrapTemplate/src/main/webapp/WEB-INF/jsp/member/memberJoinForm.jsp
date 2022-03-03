@@ -8,7 +8,6 @@
 
 	<div>
 		<form id="frm" name="frm" action="memberLogin.do" method="POST">
-		<button onclick="idCheck(event)" id="idCheck" value="No">중복체크</button>
 			<div>
 				<table border="1">
 					<tr>
@@ -45,7 +44,7 @@
 			</div><br/>
 			
 			<div>
-				<button type="button" onclick="formCheck()">회원가입</button>&nbsp;&nbsp;&nbsp;
+				<button type="submit" onclick="formCheck()">회원가입</button>&nbsp;&nbsp;&nbsp;
 				<button type="reset">취 소</button>&nbsp;&nbsp;&nbsp;
 				<button type="button" onclick="location.href='main.do'">홈</button>
 			</div>
