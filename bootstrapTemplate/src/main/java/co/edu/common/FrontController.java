@@ -13,12 +13,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.edu.aboutus.AboutUs;
 import co.edu.member.web.MemberJoinForm;
+import co.edu.member.web.MemberList;
 import co.edu.member.web.MemberLogin;
 import co.edu.member.web.MemberLoginSession;
 import co.edu.product.web.ProductForm;
 import co.edu.product.web.ProductList;
 import co.edu.product.web.ProductUpload;
 import co.edu.member.web.AjaxIdCheck;
+import co.edu.member.web.Logout;
 
 
 //@WebServlet("/FrontController")
@@ -37,9 +39,13 @@ public class FrontController extends HttpServlet {
 		
 		// member
 		map.put("/memberLogin.do", new MemberLogin()); // 로그인 호출
+		map.put("/logout.do", new Logout()); // 로그아웃 호출
 		map.put("/memberJoinForm.do", new MemberJoinForm()); //회원가입 폼 호출
 		map.put("/ajaxIdCheck.do", new AjaxIdCheck()); // 아이디 중복체크(ajax)
 		map.put("/memberLoginSession.do", new MemberLoginSession()); //로그인 후 세션처리
+		map.put("/memberList.do", new MemberList()); // 회원목록 호출
+		// 회원정보 수정
+		// 회원탈퇴
 		
 		//ABOUT US
 		map.put("/aboutUs.do", new AboutUs());

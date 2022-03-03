@@ -88,6 +88,9 @@
                   </g>
                 </svg>
               </a>
+              <a href="logout.do" class="order_online">
+              LOGOUT
+              </a>
               </c:if>
             
               <c:if test="${empty id }">

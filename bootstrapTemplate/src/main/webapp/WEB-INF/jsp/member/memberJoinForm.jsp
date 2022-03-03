@@ -12,30 +12,34 @@
 			<div>
 				<table border="1">
 					<tr>
-						<th width="150">아 이 디</th>
-						<td width="700"><input type="text" id="id" name="id" size="60" required="required" placeholder="아이디를 입력해 주세요.">&nbsp;&nbsp;
+						<th width="150">ID</th>
+						<td width="700"><input type="text" id="id" name="id" size="60" required="required" placeholder="ID">&nbsp;&nbsp;
 							<button onclick="idCheck(event)" id="idCheck" value="No">중복체크</button>
 						</td>
 					</tr>
 					<tr>
-						<th width="150">비밀번호</th>
-						<td width="700"><input type="password" id="password" name="password" size="60" placeholder="비밀번호를 입력해 주세요."></td>
+						<th width="150">PASSWORD</th>
+						<td width="700"><input type="password" id="password" name="password" size="60" placeholder="PASSWORD"></td>
 					</tr>
 					<tr>
-						<th width="150">비밀번호 확인</th>
-						<td width="700"><input type="password" id="password1" name="password1" size="60" placeholder="비밀번호를 한 번 더 입력해 주세요."></td>
+						<th width="150">PASSWORD CHECK</th>
+						<td width="700"><input type="password" id="password1" name="password1" size="60" placeholder="PASSWORD CHECK"></td>
 					</tr>
 					<tr>
-						<th width="150">이 름</th>
-						<td width="700"><input type="text" id="name" name="name" size="60" placeholder="이름을 입력해 주세요."></td>
+						<th width="150">NAME</th>
+						<td width="700"><input type="text" id="name" name="name" size="60" placeholder="NAME"></td>
 					</tr>
 					<tr>
-						<th width="150">주 소</th>
-						<td width="700"><input type="text" id="address" name="address" size="60" placeholder="주소를 입력해 주세요."></td>
+						<th width="150">ADDRESS</th>
+						<td width="700"><input type="text" id="address" name="address" size="60" placeholder="ADDRESS"></td>
 					</tr>
 					<tr>
-						<th width="150">전화번호</th>
+						<th width="150">TEL</th>
 						<td width="700"><input type="text" id="address" name="address" size="60" placeholder="010-1234-5678"></td>
+					</tr>
+					<tr>
+						<th width="150">EMAIL</th>
+						<td width="700"><input type="email" id="email" name="email" size="60" placeholder="abc@abc.com"></td>
 					</tr>
 				</table>
 			</div><br/>
