@@ -24,7 +24,7 @@
                 <a class="nav-link" href="productList.do">Products</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About US</a>
+                <a class="nav-link" href="aboutUs.do">About US</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Community</a>
@@ -102,6 +102,7 @@
       </div>
     </header>
     <!-- end header section -->
+<<<<<<< HEAD
     <!-- slider section -->
     <section class="slider_section ">
       <div id="customCarousel1" class="carousel slide" data-ride="carousel">
@@ -194,3 +195,7 @@ window.onclick = function(event) {
     }
 }
 </script>
+=======
+    
+  </div>
+>>>>>>> branch 'master' of https://github.com/iambeenee/COFFEE.git

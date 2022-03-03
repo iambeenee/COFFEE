@@ -72,16 +72,16 @@ public class ProductServiceImpl extends DAO implements ProductService {
 	@Override
 	public int insertProduct(ProductVO vo) {
 		// 상품등록
-		String sql = "INSERT INTO products VALUES(?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO products VALUES(product_seq.nextval, ?, ?, ?, ?, ?, ?)";
 		int n = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, vo.getpNo());
-			psmt.setString(2, vo.getpName());
-			psmt.setString(3, vo.getKind());
-			psmt.setInt(4, vo.getPrice());
-			psmt.setString(5, vo.getpContent());
-			psmt.setString(6, vo.getImage());
+			
+			psmt.setString(1, vo.getpName());
+			psmt.setString(2, vo.getKind());
+			psmt.setInt(3, vo.getPrice());
+			psmt.setString(4, vo.getpContent());
+			psmt.setString(5, vo.getImage());
 			psmt.setString(6, vo.getRegDate());
 			n = psmt.executeUpdate();
 		} catch (SQLException e) {
