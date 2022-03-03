@@ -7,7 +7,7 @@
 	</div>
 
 	<div>
-		<form id="frm" name="frm" action="memberJoin.do" method="POST">
+		<form id="frm" name="frm" action="memberLogin.do" method="POST">
 		<button onclick="idCheck(event)" id="idCheck" value="No">중복체크</button>
 			<div>
 				<table border="1">
@@ -59,7 +59,6 @@
 			if (xhttp.readyState == 4) { // 통신이 연결돼서 데이터가 다 전달되었다면
 				if (xhttp.status == 200) { // 정상적으로 종료되었을 때
 					let b = xhttp.responseText; // 결과데이터 받는 부분
-					console.log(b);
 					if (b == '1') {
 						alert(id + "는 사용가능한 아이디 입니다.");
 						frm.idCheck.value = "Yes";
@@ -75,8 +74,6 @@
 		}
 		xhttp.open("GET", "ajaxIdCheck.do?id=" + id); // 호출해야 할 방법과 주소
 		xhttp.send(); // ajax 호출하는 부분
-
-		return false;
 	}
 
 	// 비밀번호 일치여부 확인

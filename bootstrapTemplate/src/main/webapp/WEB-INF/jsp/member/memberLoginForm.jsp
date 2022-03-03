@@ -138,7 +138,7 @@ span.join {
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/main.do" method="post">
+  <form class="modal-content animate" action="#" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
@@ -155,7 +155,7 @@ span.join {
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="join"><a href="memberJoinForm.tiles">Join</a></span>
+      <span class="join"><a href="memberJoinForm.do">Join</a></span>
     </div>
   </form>
 </div>
