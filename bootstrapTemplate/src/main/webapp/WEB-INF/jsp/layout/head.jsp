@@ -9,9 +9,8 @@
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
-            <span>
-              COFFEE BEANS
+          <a class="navbar-brand" href="main.do">
+            <span>COFFEE BEANS
             </span>
           </a>
 
@@ -21,9 +20,6 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
-              <li class="nav-item active">
-                <a class="nav-link" href="main.do">Home <span class="sr-only">(current)</span></a>
-              </li>
               <li class="nav-item">
                 <a class="nav-link" href="productList.do">Products</a>
               </li>
@@ -35,6 +31,7 @@
               </li>
             </ul>
             <div class="user_option">
+            <c:if test="${not empty id }">
               <a href="#" class="user_link">
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
@@ -92,17 +89,13 @@
                   </g>
                 </svg>
               </a>
-              <form class="form-inline">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-              </form>
+              </c:if>
+            
               <c:if test="${empty id }">
-              <a href="#" class="order_online">
+              <a href="memberLoginForm.do" class="order_online">
                 LOGIN
               </a>
               </c:if>
-
             </div>
           </div>
         </nav>

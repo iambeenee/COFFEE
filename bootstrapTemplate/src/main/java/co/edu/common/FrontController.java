@@ -1,6 +1,12 @@
 package co.edu.common;
 
 import java.io.IOException;
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> branch 'master' of https://github.com/iambeenee/COFFEE.git
 import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
@@ -11,7 +17,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.edu.member.web.MemberJoinForm;
+<<<<<<< HEAD
 import co.edu.product.web.ProductList;
+=======
+import co.edu.member.web.MemberLoginForm;
+>>>>>>> branch 'master' of https://github.com/iambeenee/COFFEE.git
 
 //@WebServlet("/FrontController")
 public class FrontController extends HttpServlet {
@@ -24,8 +34,9 @@ public class FrontController extends HttpServlet {
 	}
 
 	public void init(ServletConfig config) throws ServletException {
-		// TODO 호출명 저장소 -> 패키지 command
+		// 호출명 저장소
 		map.put("/main.do", new MainPage()); // 시작페이지
+		map.put("/memberLoginForm.do", new MemberLoginForm()); // 로그인
 		map.put("/memberJoinForm.do", new MemberJoinForm()); // 회원가입
 		
 		
