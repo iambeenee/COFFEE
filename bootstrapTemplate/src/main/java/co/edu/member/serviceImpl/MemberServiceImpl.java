@@ -154,15 +154,16 @@ public class MemberServiceImpl extends DAO implements MemberService {
 	@Override
 	public boolean isIdcheck(String id) {
 		// 아이디 중복 체크
-		String sql = "SELECT CASE WHEN COUNT(ID) = 1 THEN 0 ELSE 1 AND AS ID FROM MEMBERS WHERE ID = ?";
+		String sql = "SELECT CASE WHEN COUNT(ID) = 1 THEN 0 ELSE 1 END AS ID FROM MEMBER WHERE ID = ?";
 		boolean b = false;
+
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
 			rs = psmt.executeQuery();
 			if (rs.next()) {
 				if (rs.getInt("id") != 0) {
-					b = false;
+					b = true;
 				}
 			}
 		} catch (SQLException e) {

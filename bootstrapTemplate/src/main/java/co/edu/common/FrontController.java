@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.edu.member.web.MemberJoin;
 import co.edu.member.web.MemberJoinForm;
 
 import co.edu.product.web.ProductList;
@@ -31,9 +32,9 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		// 호출명 저장소
 		map.put("/main.do", new MainPage()); // 시작페이지
-		map.put("/memberLoginForm.do", new MemberLoginForm()); // 로그인
-		map.put("/memberJoinForm.do", new MemberJoinForm()); // 회원가입
-		
+		map.put("/memberLoginForm.do", new MemberLoginForm()); // 로그인 폼 호출
+		map.put("/memberJoinForm.do", new MemberJoinForm()); // 회원가입 폼 호출
+		map.put("/memberJoin.do", new MemberJoin());
 		
 		
 		

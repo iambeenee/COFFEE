@@ -11,5 +11,6 @@ public interface MemberService {
 	public int updateMember(MemberVO vo); // 회원정보수정
 	public int deleteMember(MemberVO vo); //회원탈퇴
 	public MemberVO loginCheck(MemberVO vo); // 로그인 정보
+	
 	boolean isIdcheck(String id); // 아이디 중복 체크 -> boolean은 디폴트값이 false, 존재하면 false
 }
