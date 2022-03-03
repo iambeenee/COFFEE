@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>COFFEE BEANS</title>
 </head>
 <body>
 	<jsp:forward page="main.do"></jsp:forward>
