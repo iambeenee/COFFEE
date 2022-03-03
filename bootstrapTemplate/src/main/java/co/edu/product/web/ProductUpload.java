@@ -36,7 +36,7 @@ public class ProductUpload implements DbCommand {
 		service.insertProduct(product);
 		
 		session.setAttribute("p_name", pName);
-		request.setAttribute(", product);
+		request.setAttribute("", product);
 		return null;
 	}
 

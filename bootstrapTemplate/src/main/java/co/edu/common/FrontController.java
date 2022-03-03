@@ -1,12 +1,7 @@
 package co.edu.common;
 
 import java.io.IOException;
-<<<<<<< HEAD
-=======
 
-
-
->>>>>>> branch 'master' of https://github.com/iambeenee/COFFEE.git
 import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
@@ -17,11 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.edu.member.web.MemberJoinForm;
-<<<<<<< HEAD
+
 import co.edu.product.web.ProductList;
-=======
+
 import co.edu.member.web.MemberLoginForm;
->>>>>>> branch 'master' of https://github.com/iambeenee/COFFEE.git
+
 
 //@WebServlet("/FrontController")
 public class FrontController extends HttpServlet {

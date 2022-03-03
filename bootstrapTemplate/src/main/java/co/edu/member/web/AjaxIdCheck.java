@@ -3,9 +3,10 @@ package co.edu.member.web;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.jyb.prj.common.Command;
-import co.jyb.prj.member.service.MemberService;
-import co.jyb.prj.member.serviceImpl.MemberServiceImpl;
+import org.mvel2.sh.Command;
+
+import co.edu.member.service.MemberService;
+import co.edu.member.serviceImpl.MemberServiceImpl;
 
 public class AjaxIdCheck implements Command {
 
