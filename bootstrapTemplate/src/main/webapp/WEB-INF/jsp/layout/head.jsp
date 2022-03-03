@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="hero_area">
     <div class="bg-box">
-      <img src="images/hero-bg.jpg" alt="">
+      <img src="images/coffee.jpg" alt="">
     </div>
     <!-- header section strats -->
     <header class="header_section">
@@ -25,7 +25,7 @@
                 <a class="nav-link" href="main.do">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Products</a>
+                <a class="nav-link" href="productList.do">Products</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">About US</a>
