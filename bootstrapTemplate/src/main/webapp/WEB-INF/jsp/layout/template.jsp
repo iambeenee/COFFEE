@@ -3,11 +3,6 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/iambeenee/COFFEE.git
-
 
 <head>
   <!-- Basic -->
@@ -66,7 +61,4 @@
 
 </body>
 </html>
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/iambeenee/COFFEE.git

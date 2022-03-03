@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<<<<<<< HEAD
 
-
-
-
-=======
->>>>>>> branch 'master' of https://github.com/iambeenee/COFFEE.git
 <footer class="footer_section">
     <div class="container">
       <div class="row">

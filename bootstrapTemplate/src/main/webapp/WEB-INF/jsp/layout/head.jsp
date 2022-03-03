@@ -102,7 +102,7 @@
                 LOGIN
               </a>
               </c:if>
->>>>>>> branch 'master' of https://github.com/iambeenee/COFFEE.git
+
             </div>
           </div>
         </nav>
