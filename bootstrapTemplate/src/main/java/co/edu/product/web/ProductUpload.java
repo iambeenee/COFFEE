@@ -13,8 +13,7 @@ public class ProductUpload implements DbCommand {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		// 서버가 가지고 있는 세션객체를 담음
-		HttpSession session = request.getSession();
+		
 		
 		// 상품 등록 처리
 		String pName = request.getParameter("p_name");
@@ -25,19 +24,18 @@ public class ProductUpload implements DbCommand {
 		String regDate = request.getParameter("reg_date");
 		
 		ProductVO product = new ProductVO();
-		product.setProductpName(pName);
-		product.setProductKind(kind);
-		product.setProductPrice(price);
-		product.setProductpContent(pContent);
-		product.setProductImage(image);
-		product.setProductRegDate(regDate);
+		product.setpName(pName);
+		product.setKind(kind);
+		product.setPrice(Integer.parseInt(price));
+		product.setpContent(pContent);
+		product.setImage(image);
+		product.setRegDate(regDate);
 		
 		ProductService service = new ProductServiceImpl();
 		service.insertProduct(product);
 		
-		session.setAttribute("p_name", pName);
-		request.setAttribute("", product);
-		return null;
+		
+		return "product/productList.tiles";
 	}
 
 }

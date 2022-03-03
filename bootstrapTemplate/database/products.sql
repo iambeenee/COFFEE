@@ -11,8 +11,8 @@ create table products (
      price      number(7)      not null,
      p_content	varchar2(1000),
      image      varchar2(100),
-     reg_date   date           sysdate
+     reg_date   date           default sysdate
      );
      
  --쿼리문 예시
-insert into products values (prduct_seq.nextval, '예가체프', 'a', '30000', '최상의원두, 맛있어요!', '이미지파일주소', sysdate);
+insert into products values (product_seq.nextval, '예가체프', 'a', '30000', '최상의원두, 맛있어요!', '이미지파일주소', sysdate);
