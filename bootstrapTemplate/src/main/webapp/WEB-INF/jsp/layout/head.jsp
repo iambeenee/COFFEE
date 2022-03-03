@@ -10,8 +10,7 @@
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="main.do">
-            <span>COFFEE BEANS
-            </span>
+            <span>COFFEE BEANS</span>
           </a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,7 +91,7 @@
               </c:if>
             
               <c:if test="${empty id }">
-              <a href="memberLoginForm.do" class="order_online">
+              <a href="memberLogin.do" class="order_online">
                 LOGIN
               </a>
               </c:if>
@@ -102,7 +101,7 @@
       </div>
     </header>
     <!-- end header section -->
-<<<<<<< HEAD
+    
     <!-- slider section -->
     <section class="slider_section ">
       <div id="customCarousel1" class="carousel slide" data-ride="carousel">
@@ -195,7 +194,3 @@ window.onclick = function(event) {
     }
 }
 </script>
-=======
-    
-  </div>
->>>>>>> branch 'master' of https://github.com/iambeenee/COFFEE.git
