@@ -27,7 +27,7 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		// TODO 호출명 저장소 -> 패키지 command
 		map.put("/main.do", new MainPage()); // 시작페이지
-		map.put("/memberJoinForm.do", new MemberJoinForm());
+		map.put("/memberJoinForm.do", new MemberJoinForm()); // 회원가입
 
 	}
 
