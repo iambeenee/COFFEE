@@ -6,5 +6,5 @@
 </div>
 
 <div>
-	<form id="frm" name="frm" action=""
+	<form id="frm" name="frm" action=""></form>
 </div>

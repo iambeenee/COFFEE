@@ -3,7 +3,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
+
 
 <head>
   <!-- Basic -->
@@ -134,4 +134,4 @@
 </body>
 
 </html>
->>>>>>> branch 'master' of https://github.com/iambeenee/COFFEE.git
+
