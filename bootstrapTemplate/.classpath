@@ -32,6 +32,5 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="src/main/webapp/jquery/jquery-3.6.0.min.js"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

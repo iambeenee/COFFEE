@@ -2,11 +2,11 @@
 	pageEncoding="UTF-8"%>
 
 <div align="center">
-	<div>
+	
 		<h1>로 그 인</h1>
-	</div>
+	
 
-	<div>
+
 		<form id="frm" name="frm" action="memberLoginSession.do" method="POST">
 			<table border="1">
 				<tr>
@@ -24,7 +24,7 @@
 				<button type="submit" onclick="formCheck()">로그인</button>
 			</div>
 		</form>
-	</div>
+	
 </div>
 
 <script type="text/javascript">

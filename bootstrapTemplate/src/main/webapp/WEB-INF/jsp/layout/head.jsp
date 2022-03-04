@@ -106,7 +106,7 @@
     </header>
     <!-- end header section -->
     
-   
+</div>   
   
 <script>
 // Get the modal
