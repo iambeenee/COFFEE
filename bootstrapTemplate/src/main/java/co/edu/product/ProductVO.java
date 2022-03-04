@@ -11,6 +11,8 @@ public class ProductVO {
 	private String regDate;
 	
 	
+	
+	
 	public int getpNo() {
 		return pNo;
 	}

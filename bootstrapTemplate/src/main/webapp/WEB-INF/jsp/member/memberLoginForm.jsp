@@ -3,7 +3,7 @@
 
 <div align="center">
 	<h1>로 그 인</h1>
-	<form id="frm" name="frm" action="memberLoginSession.do" method="POST">
+	<form id="frm" name="frm" action="memberLoginSession.do" method="POST" onsubmit="check_id_submit(event)">
 		<table border="1">
 			<tr>
 				<th width="150">ID</th>
@@ -23,3 +23,10 @@
 		</div>
 	</form>
 </div>
+<script>
+function check_id_submit(e) {
+	e.preventDefault();
+	
+	frm.submit();
+}
+</script>

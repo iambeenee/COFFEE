@@ -141,11 +141,14 @@ public class MemberServiceImpl extends DAO implements MemberService {
 			psmt.setString(1, vo.getId());
 			psmt.setString(2, vo.getPassword());
 			rs = psmt.executeQuery();
-			if(rs.next()) {
+			if (rs.next()) {
 				vo.setName(rs.getString("name"));
+<<<<<<< HEAD
 				vo.setAddress(rs.getString("address"));
 				vo.setTel(rs.getString("tel"));
 				vo.setEmail(rs.getString("email"));
+=======
+>>>>>>> branch 'master' of https://github.com/iambeenee/COFFEE.git
 				vo.setAuthor(rs.getString("author"));
 			}
 		} catch (SQLException e) {
