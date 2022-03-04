@@ -19,6 +19,7 @@ public class ProductList implements DbCommand {
 		List<ProductVO> list = service.selectProductList();
 		
 		request.setAttribute("list", list);
+		request.setAttribute("products", "hhhhh");
 		
 		return "product/productList.tiles";
 	}

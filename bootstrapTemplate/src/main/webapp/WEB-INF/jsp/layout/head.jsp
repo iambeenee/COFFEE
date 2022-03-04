@@ -93,11 +93,12 @@
               </a>
               </c:if>
          
-        
+         <h1 style="color: white">${author}</h1>
               <c:if test="${empty id }">
               <a href="memberLogin.do" class="order_online">
                 LOGIN
               </a>
+             
               </c:if>
             </div>
           </div>

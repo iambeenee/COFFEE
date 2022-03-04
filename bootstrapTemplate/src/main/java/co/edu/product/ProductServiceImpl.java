@@ -19,7 +19,7 @@ public class ProductServiceImpl extends DAO implements ProductService {
 		// 상품전체조회
 		List<ProductVO> products = new ArrayList<>();
 		ProductVO vo;
-		String sql = "SELCET * FROM products ORDER BY p_no";
+		String sql = "SELECT * FROM products ORDER BY p_no";
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();

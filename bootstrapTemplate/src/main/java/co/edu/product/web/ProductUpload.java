@@ -20,7 +20,7 @@ public class ProductUpload implements DbCommand {
 		String kind = request.getParameter("kind");
 		String price = request.getParameter("price");
 		String pContent = request.getParameter("p_content");
-		String image = request.getParameter("p_content");
+		String image = request.getParameter("image");
 		String regDate = request.getParameter("reg_date");
 		
 		ProductVO product = new ProductVO();
