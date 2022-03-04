@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.edu.aboutus.AboutUs;
+import co.edu.common.cart.web.CartList;
 import co.edu.member.web.MemberJoinForm;
 import co.edu.member.web.MemberList;
 import co.edu.member.web.MemberLogin;
@@ -56,6 +57,10 @@ public class FrontController extends HttpServlet {
 		map.put("/productList.do", new ProductList()); //상품리스트
 		map.put("/productForm.do", new ProductForm()); //상품등록(관리자 권한)
 		map.put("/productUpload.do", new ProductUpload()); //상품업로드
+		
+		
+		//CART
+		map.put("/cartList.do", new CartList());    //장바구니
 
 	}
 
