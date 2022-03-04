@@ -13,30 +13,26 @@ public class MemberLoginSession implements DbCommand {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		// 세션객체에 서버가 가지고있는 세션객체를 담음
-		HttpSession session = request.getSession();
-
-		// 회원가입 처리
-		String id = request.getParameter("id");
-		String password = request.getParameter("password");
-		String name = request.getParameter("name");
-		String address = request.getParameter("address");
-		String tel = request.getParameter("tel");
-
-		MemberVO member = new MemberVO();
-		member.setId(id);
-		member.setPassword(password);
-		member.setName(name);
-		member.setAddress(address);
-		member.setTel(tel);
-
-		MemberService service = new MemberServiceImpl();
-		service.insertMember(member);
-
-		session.setAttribute("idd", id);
-		request.setAttribute("member", member);
-
-		return "main/main.tiles";
+		// 로그인 처리
+		MemberService memberDAO = new MemberServiceImpl();
+		MemberVO vo = new MemberVO();
+		HttpSession session = request.getSession(); // 서버가 가지고 있는 세션 객체를 호출
+		
+		vo.setId(request.getParameter("id"));
+		vo.setPassword(request.getParameter("password"));
+		
+		vo = memberDAO.loginCheck(vo);
+		
+		// 세션처리
+		if(vo.getName() != null) {
+			session.setAttribute("id", vo.getId());
+			session.setAttribute("name", vo.getName());
+			session.setAttribute("author", vo.getAuthor());
+			return "main.do";
+		} else {
+			request.setAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
+			return "memberLoginFail.do";
+		}
 	}
 
 }

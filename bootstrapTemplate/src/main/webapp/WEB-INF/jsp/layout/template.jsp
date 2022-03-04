@@ -37,8 +37,10 @@
 <body>
   <tiles:insertAttribute name="head"></tiles:insertAttribute>
   
-  
+  <div>
       <tiles:insertAttribute name="body"></tiles:insertAttribute>
+  
+  </div>
   
    
   <tiles:insertAttribute name="foot"></tiles:insertAttribute>
