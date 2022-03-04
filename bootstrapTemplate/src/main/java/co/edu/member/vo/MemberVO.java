@@ -10,6 +10,8 @@ public class MemberVO {
 	private String email;
 	private String date;
 	private String author;
+	
+	//
 	public String getId() {
 		return id;
 	}

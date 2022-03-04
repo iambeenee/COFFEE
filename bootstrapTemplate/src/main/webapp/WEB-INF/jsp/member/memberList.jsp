@@ -4,13 +4,7 @@
 
 <div align="center">
 	<div>
-		<h1>NOTICE</h1>
-	</div>
-
-	<form id="frm" name="frm" action="memberList.do" method="post">
-		<input type="hidden" id="id" name="id">
-	</form>
-	<div>
+		<h1>Member List</h1>
 		<table class="table">
 			<thead>
 				<tr>

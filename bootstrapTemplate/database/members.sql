@@ -6,5 +6,5 @@ create table members (
 	tel          varchar2(20)   not null,
 	email        varchar2(50)   not null,
 	join_date    date           default sysdate,
-	author       varchar2(10)   default user
+	author       varchar2(10)   default 'user'
 );
