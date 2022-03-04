@@ -46,7 +46,7 @@ public class FrontController extends HttpServlet {
 		map.put("/ajaxIdCheck.do", new AjaxIdCheck()); // 아이디 중복체크(ajax)
 		map.put("/memberLoginSession.do", new MemberLoginSession()); //로그인 후 세션처리
 		map.put("/memberList.do", new MemberList()); // 회원목록 호출
-		map.put("memberUpdate.do", new MemberUpdate()); // 회원정보 수정
+		map.put("/memberUpdate.do", new MemberUpdate()); // 회원정보 수정
 		// 회원탈퇴
 		
 		//ABOUT US
