@@ -7,13 +7,13 @@
 	</div>
 
 	<div>
-		<form id="frm" name="frm" action="memberLogin.do" method="POST">
+		<form id="frm" name="frm" action="memberJoinSession.do" method="POST">
 			<div>
 				<table border="1">
 					<tr>
 						<th width="150">ID</th>
 						<td width="700"><input type="text" id="id" name="id" size="60" required="required" placeholder="ID">&nbsp;&nbsp;
-							<button onclick="idCheck(event)" id="idCheck" value="No">중복체크</button>
+							<button onclick="id_Check(event)" id="idCheck" value="No">중복체크</button>
 						</td>
 					</tr>
 					<tr>
@@ -53,7 +53,7 @@
 
 <script type="text/javascript">
 	// ajax로 아이디를 중복체크
-	function idCheck(e) {
+	function id_Check(e) {
 		e.preventDefault();
 		const xhttp = new XMLHttpRequest(); // aJax객체를 생성
 		const id = frm.id.value;
@@ -90,8 +90,6 @@
 			frm.password.value = "";
 			frm.password1.value = "";
 			frm.password.focus();
-			return false;
 		}
-		return true;
 	}
 </script>

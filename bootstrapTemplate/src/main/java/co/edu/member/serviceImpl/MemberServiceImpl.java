@@ -73,7 +73,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 	@Override
 	public int insertMember(MemberVO vo) {
 		// 회원 가입
-		String sql = "INSERT INTO MEMBERS VALUES(?, ?, ?, ?, ?,?)";
+		String sql = "INSERT INTO MEMBERS (ID, PASSWORD, NAME, ADDRESS, TEL, EMAIL) VALUES (?, ?, ?, ?, ?, ?) ";
 		int n = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -155,7 +155,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 	@Override
 	public boolean isIdcheck(String id) {
 		// 아이디 중복 체크
-		String sql = "SELECT CASE WHEN COUNT(ID) = 1 THEN 0 ELSE 1 END AS ID FROM MEMBER WHERE ID = ?";
+		String sql = "SELECT CASE WHEN COUNT(ID) = 1 THEN 0 ELSE 1 END AS ID FROM MEMBERS WHERE ID = ?";
 		boolean b = false;
 
 		try {

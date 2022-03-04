@@ -10,38 +10,38 @@
               Contact Us
             </h4>
             <div class="contact_link_box">
-              <a href="">
+              <p>
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
                   Call +01 1234567890
                 </span>
-              </a>
-              <a href="">
+              </p>
+              <p>
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
                   coffeebeans@coffee.com
                 </span>
-              </a>
-              <a href="">
+              </p>
+              <p>
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
                   대구광역시 중구 동성로 100
                 </span>
-              </a>
+              </p>
               
             </div>
           </div>
         </div>
         <div class="col-md-4 footer-col">
           <div class="footer_detail">
-            <a href="" class="footer-logo">
+            <h4>
               Coffee Beans
-            </a>
+            </h4>
             <p>
-              	대표 장예빈
+                 대표 장예빈
             </p>
             <p>
-            	사업자등록	3456753123
+               사업자등록   3456753123
             </p>
              
             <div class="footer_social">
@@ -54,10 +54,10 @@
               <a href="">
                 <i class="fa fa-instagram" aria-hidden="true"></i>
               </a>
-             
             </div>
           </div>
         </div>
+        
        <div class="col-md-4 footer-col">
           <h4>
             Bank Account
