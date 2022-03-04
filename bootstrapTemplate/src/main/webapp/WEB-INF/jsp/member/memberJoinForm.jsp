@@ -34,7 +34,7 @@
 					</tr>
 					<tr>
 						<th width="150">TEL</th>
-						<td width="700"><input type="text" id="address" name="address" size="60" placeholder="010-1234-5678"></td>
+						<td width="700"><input type="text" id="tel" name="tel" size="60" placeholder="010-1234-5678"></td>
 					</tr>
 					<tr>
 						<th width="150">EMAIL</th>
@@ -46,7 +46,6 @@
 			<div>
 				<button type="submit" onclick="formCheck()">회원가입</button>&nbsp;&nbsp;&nbsp;
 				<button type="reset">취 소</button>&nbsp;&nbsp;&nbsp;
-				<button type="button" onclick="location.href='main.do'">홈</button>
 			</div>
 		</form>
 	</div>
