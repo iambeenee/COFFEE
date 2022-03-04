@@ -1,8 +1,8 @@
 package co.edu.product.web;
 
 import javax.servlet.http.HttpServletRequest;
+
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import co.edu.common.DbCommand;
 import co.edu.product.ProductService;

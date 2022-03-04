@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<footer class="footer_section">
+<!-- footer section -->
+  <footer class="footer_section">
     <div class="container">
       <div class="row">
         <div class="col-md-4 footer-col">
@@ -10,6 +11,7 @@
               Contact Us
             </h4>
             <div class="contact_link_box">
+              <div class="contact_link_box">
               <p>
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
@@ -28,9 +30,9 @@
                   대구광역시 중구 동성로 100
                 </span>
               </p>
-              
             </div>
           </div>
+        </div>
         </div>
         <div class="col-md-4 footer-col">
           <div class="footer_detail">
@@ -43,7 +45,6 @@
             <p>
                사업자등록   3456753123
             </p>
-             
             <div class="footer_social">
               <a href="">
                 <i class="fa fa-facebook" aria-hidden="true"></i>
@@ -58,7 +59,7 @@
           </div>
         </div>
         
-       <div class="col-md-4 footer-col">
+        <div class="col-md-4 footer-col">
           <h4>
             Bank Account
           </h4>
@@ -73,11 +74,12 @@
           </p>
         </div>
       </div>
+    </div>
       <div class="footer-info">
         <p>
           &copy; <span id="displayYear"></span> All Rights Reserved By
           <a href="https://html.design/">Coffee Beans</a><br><br>
         </p>
       </div>
-    </div>
   </footer>
+  <!-- footer section -->
