@@ -54,6 +54,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 			if (rs.next()) {
 				vo = new MemberVO();
 				vo.setId(rs.getString("id"));
+				vo.setPassword(rs.getString("password"));
 				vo.setName(rs.getString("name"));
 				vo.setAddress(rs.getString("address"));
 				vo.setTel(rs.getString("tel"));
@@ -95,7 +96,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 	@Override
 	public int updateMember(MemberVO vo) {
 		// 회원정보수정
-		String sql = "UPDATE MEMBERS SET PASSWORD = ?, NAME = ?, ADDRESSS = ?, TEL = ?, EMAIL = ? WHERE ID = ?";
+		String sql = "UPDATE MEMBERS SET PASSWORD = ?, NAME = ?, ADDRESS = ?, TEL = ?, EMAIL = ? WHERE ID = ?";
 		int n = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -142,6 +143,10 @@ public class MemberServiceImpl extends DAO implements MemberService {
 			rs = psmt.executeQuery();
 			if(rs.next()) {
 				vo.setName(rs.getString("name"));
+				vo.setAddress(rs.getString("address"));
+				vo.setTel(rs.getString("tel"));
+				vo.setEmail(rs.getString("email"));
+				vo.setAuthor(rs.getString("author"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

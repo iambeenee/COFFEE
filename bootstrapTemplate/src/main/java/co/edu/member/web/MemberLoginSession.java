@@ -28,6 +28,9 @@ public class MemberLoginSession implements DbCommand {
 			session.setAttribute("id", vo.getId());
 			session.setAttribute("name", vo.getName());
 			session.setAttribute("author", vo.getAuthor());
+			
+			System.out.println(vo.getAuthor());
+			
 			return "main.do";
 		} else {
 			request.setAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
