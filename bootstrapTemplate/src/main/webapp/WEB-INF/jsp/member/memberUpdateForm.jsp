@@ -2,6 +2,48 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<style>
+/* 한글 폰트 */
+	h1{
+		font-family: "Open Sans", sans-serif;
+	}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button, .withdraw {
+	display: inline-block;
+	padding: 8px 30px;
+	background-color: #ffbe33;
+	color: #ffffff;
+	border-radius: 45px;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	border: none;
+}
+
+button, .withdraw:hover {
+  background-color: #e69c00;
+}
+
+/* TABLE */
+th {
+	width: 170px;
+}
+
+td {
+	width: 500px;
+}
+</style>
+
 <body class="sub_page">
 	<section class="food_section layout_padding">
 		<div class="container" align="center">
@@ -15,44 +57,45 @@
 					<input type="hidden" name="id" value="${member.id }">
 					<table>
 						<tr>
-							<th width="200">ID</th>
+							<th>ID</th>
 							<td>${member.id }</td>
 						</tr>
 						<tr>
-							<th width="200">NAME</th>
+							<th>NAME</th>
 							<td><input type="text" id="name" name="name"
 								value="${member.name }"></td>
 						</tr>
 						<tr>
-							<th width="200">PASSWORD</th>
+							<th>PASSWORD</th>
 							<td><input type="password" id="password" name="password"
 								value="${member.password }"></td>
 						</tr>
 						<tr>
-							<th width="200">PASSWORD CHECK</th>
+							<th>PASSWORD CHECK</th>
 							<td><input type="password" id="password1" name="password1"
 								value="${member.password }"></td>
 						</tr>
 						<tr>
-							<th width="200">ADDRESS</th>
+							<th>ADDRESS</th>
 							<td><input type="text" id="address" name="address"
 								value="${member.address }"></td>
 						</tr>
 						<tr>
-							<th width="200">TEL</th>
+							<th>TEL</th>
 							<td><input type="text" id="tel" name="tel"
 								value="${member.tel }"></td>
 						</tr>
 						<tr>
-							<th width="200">EMAIL</th>
+							<th>EMAIL</th>
 							<td><input type="email" id="email" name="email"
 								value="${member.email }"></td>
 						</tr>
 					</table>
+					<br/>
 					<div>
 						<button type="submit" onclick="formCheck()">수정완료</button>
 						&nbsp;&nbsp;&nbsp;
-						<button type="button" onclick="memberWithdrawal.do">회원탈퇴</button>
+						<a class="withdraw" href="memberWithdrawal.do">회원탈퇴</a>
 					</div>
 				</form>
 			</div>

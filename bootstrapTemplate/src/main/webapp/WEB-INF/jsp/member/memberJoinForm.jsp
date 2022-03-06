@@ -42,10 +42,6 @@ button.idCheck:hover {
   background-color: #e69c00;
 }
 
-/* TABLE
-table, td{
-	 border: 1px solid #bcbcbc;
-}*/
 th {
 	width: 170px;
 }

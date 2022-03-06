@@ -15,8 +15,14 @@ public class MemberWithdrawal implements DbCommand {
 		// 회원탈퇴처리
 		MemberService memberDAO = new MemberServiceImpl();
 		MemberVO vo = new MemberVO();
+		vo.setId(request.getParameter("id"));
 		
-		memberDAO.deleteMember(vo);
+		int n = memberDAO.deleteMember(vo);
+		if(n != 0) {
+			return "memberDeleteForm.do";
+		} else {
+			return "#";
+		}
 		
 		return "member/memberWithdrawal.tiles";
 	}
