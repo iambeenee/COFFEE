@@ -4,9 +4,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.edu.common.DbCommand;
-import co.edu.member.service.MemberService;
-import co.edu.member.serviceImpl.MemberServiceImpl;
-import co.edu.member.vo.MemberVO;
+import co.edu.member.MemberService;
+import co.edu.member.MemberServiceImpl;
+import co.edu.member.MemberVO;
 
 public class MemberUpdate implements DbCommand {
 
@@ -26,7 +26,8 @@ public class MemberUpdate implements DbCommand {
 		if(n != 0) {
 			return "memberUpdateForm.do";
 		} else {
-			return "main.do";
+			request.setAttribute("message", "다시 시도해 주세요.");
+			return "member/memberMessage.tiles";
 		}
 	}
 }

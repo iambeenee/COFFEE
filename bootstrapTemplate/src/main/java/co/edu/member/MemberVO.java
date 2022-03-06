@@ -1,4 +1,4 @@
-package co.edu.member.vo;
+package co.edu.member;
 
 public class MemberVO {
 	//

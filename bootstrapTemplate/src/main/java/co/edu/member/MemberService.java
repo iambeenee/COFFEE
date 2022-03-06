@@ -1,8 +1,6 @@
-package co.edu.member.service;
+package co.edu.member;
 
 import java.util.List;
-
-import co.edu.member.vo.MemberVO;
 
 public interface MemberService {
 	List<MemberVO> selectMemberList(); //전체조회

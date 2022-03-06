@@ -5,9 +5,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import co.edu.common.DbCommand;
-import co.edu.member.service.MemberService;
-import co.edu.member.serviceImpl.MemberServiceImpl;
-import co.edu.member.vo.MemberVO;
+import co.edu.member.MemberService;
+import co.edu.member.MemberServiceImpl;
+import co.edu.member.MemberVO;
 
 public class MemberLoginSession implements DbCommand {
 
@@ -29,11 +29,12 @@ public class MemberLoginSession implements DbCommand {
 			session.setAttribute("name", vo.getName());
 			session.setAttribute("author", vo.getAuthor());
 			
-			return "main.do";
+			request.setAttribute("message", vo.getName() + "님 반갑습니다.");
+			return "member/memberMessage.tiles";
 
 		} else {
 			request.setAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
-			return "memberLoginFail.do";
+			return "member/memberMessage.tiles";
 		}
 	}
 

@@ -95,7 +95,7 @@ td {
 					<div>
 						<button type="submit" onclick="formCheck()">수정완료</button>
 						&nbsp;&nbsp;&nbsp;
-						<a class="withdraw" href="memberWithdrawal.do">회원탈퇴</a>
+						<a class="withdraw" href="memberDelete.do">회원탈퇴</a>
 					</div>
 				</form>
 			</div>

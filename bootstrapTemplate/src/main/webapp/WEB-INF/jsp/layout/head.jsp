@@ -29,14 +29,17 @@
                 <a class="nav-link" href="aboutUs.do">ABOUT US</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="book.html">COMMUITY</a>
+                <a class="nav-link" href="#">COMMUITY</a>
               </li>
             </ul>
             <div class="user_option">
-				<c:if test="${not empty id}">
+				<c:if test="${not empty id }">
 					<a href="memberUpdateForm.do" class="user_link">MYPAGE</a>
 					<a href="#" class="user_link">CART</a>
 					<a href="logout.do" class="order_online">LOGOUT</a>
+				</c:if>
+				<c:if test="${id eq 'yee' }">
+					<a href="memberList.do" class="user_link">Member List</a>
 				</c:if>
 				<c:if test="${empty id }">
 					<a href="memberLogin.do" class="order_online"> LOGIN </a>
@@ -47,6 +50,7 @@
       </div>
     </header>
     <!-- end header section -->
+    
     <!-- slider section -->
     <section class="slider_section ">
       <div id="customCarousel1" class="carousel slide" data-ride="carousel">

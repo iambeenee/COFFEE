@@ -68,7 +68,6 @@ input[type=text], input[type=password] {
 <script>
 	function check_id_submit(e) {
 		e.preventDefault();
-
 		frm.submit();
 	}
 </script>
