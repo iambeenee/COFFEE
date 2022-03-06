@@ -5,9 +5,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import co.edu.common.DbCommand;
-import co.edu.member.service.MemberService;
-import co.edu.member.serviceImpl.MemberServiceImpl;
-import co.edu.member.vo.MemberVO;
+import co.edu.member.MemberService;
+import co.edu.member.MemberServiceImpl;
+import co.edu.member.MemberVO;
 
 public class MemberLoginSession implements DbCommand {
 

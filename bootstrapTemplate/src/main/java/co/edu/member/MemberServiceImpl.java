@@ -1,4 +1,4 @@
-package co.edu.member.serviceImpl;
+package co.edu.member;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import co.edu.common.DAO;
-import co.edu.member.service.MemberService;
-import co.edu.member.vo.MemberVO;
 
 public class MemberServiceImpl extends DAO implements MemberService {
 	private PreparedStatement psmt;

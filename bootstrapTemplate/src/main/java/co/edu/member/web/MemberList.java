@@ -4,8 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.edu.common.DbCommand;
-import co.edu.member.service.MemberService;
-import co.edu.member.serviceImpl.MemberServiceImpl;
+import co.edu.member.MemberService;
+import co.edu.member.MemberServiceImpl;
 
 public class MemberList implements DbCommand {
 

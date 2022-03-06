@@ -2,32 +2,47 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<div align="center">
-	<div>
-		<h1>Member List</h1>
-		<table class="table">
-			<thead>
-				<tr>
-					<th width="100">id</th>
-					<th width="200">name</th>
-					<th width="100">address</th>
-					<th width="100">tel</th>
-					<th width="100">email</th>
-					<th width="100">join date</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="vo" items="${members }" var="member">
-					<tr>
-						<td>${member.id }</td>
-						<td>${member.name }</td>
-						<td>${member.address }</td>
-						<td>${member.tel }</td>
-						<td>${member.email }</td>
-						<td>${member.date }</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-	</div>
-</div>
+<style>
+/* 한글 폰트 */
+	h1{
+		font-family: "Open Sans", sans-serif;
+	}
+</style>
+
+<body class="sub_page">
+	<section class="food_section layout_padding">
+		<div class="container" align="center">
+			<div align='center'>
+				<div class="heading_container heading_center">
+					<h1>회 원 정 보 수 정</h1>
+				</div>
+				<br />
+
+				<table>
+					<thead>
+						<tr>
+							<th width="100">id</th>
+							<th width="200">name</th>
+							<th width="100">address</th>
+							<th width="100">tel</th>
+							<th width="100">email</th>
+							<th width="100">join date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${members }" var="member">
+							<tr>
+								<td>${member.id }</td>
+								<td>${member.name }</td>
+								<td>${member.address }</td>
+								<td>${member.tel }</td>
+								<td>${member.email }</td>
+								<td>${member.date }</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+</body>

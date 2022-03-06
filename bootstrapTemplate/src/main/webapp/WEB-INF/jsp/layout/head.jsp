@@ -33,10 +33,13 @@
               </li>
             </ul>
             <div class="user_option">
-				<c:if test="${not empty id}">
+				<c:if test="${not empty id }">
 					<a href="memberUpdateForm.do" class="user_link">MYPAGE</a>
 					<a href="#" class="user_link">CART</a>
 					<a href="logout.do" class="order_online">LOGOUT</a>
+				</c:if>
+				<c:if test="${id eq 'yee' }">
+					<a href="memberList.do" class="user_link">Member List</a>
 				</c:if>
 				<c:if test="${empty id }">
 					<a href="memberLogin.do" class="order_online"> LOGIN </a>
