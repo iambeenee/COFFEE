@@ -26,7 +26,8 @@ public class MemberUpdate implements DbCommand {
 		if(n != 0) {
 			return "memberUpdateForm.do";
 		} else {
-			return "main.do";
+			request.setAttribute("message", "다시 시도해 주세요.");
+			return "member/memberMessage.tiles";
 		}
 	}
 }

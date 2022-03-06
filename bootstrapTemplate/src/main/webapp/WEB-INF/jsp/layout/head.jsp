@@ -29,7 +29,7 @@
                 <a class="nav-link" href="aboutUs.do">ABOUT US</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="book.html">COMMUITY</a>
+                <a class="nav-link" href="#">COMMUITY</a>
               </li>
             </ul>
             <div class="user_option">
@@ -47,6 +47,7 @@
       </div>
     </header>
     <!-- end header section -->
+    
     <!-- slider section -->
     <section class="slider_section ">
       <div id="customCarousel1" class="carousel slide" data-ride="carousel">

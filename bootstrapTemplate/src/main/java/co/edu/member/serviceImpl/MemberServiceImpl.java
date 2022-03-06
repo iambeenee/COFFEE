@@ -118,7 +118,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 	@Override
 	public int deleteMember(MemberVO vo) {
 		// 회원탈퇴
-		String sql = "DELETE FORM MEMBERS WHERE ID = ?";
+		String sql = "DELETE FROM MEMBERS WHERE ID = ?";
 		int n = 0;
 		try {
 			psmt = conn.prepareStatement(sql);

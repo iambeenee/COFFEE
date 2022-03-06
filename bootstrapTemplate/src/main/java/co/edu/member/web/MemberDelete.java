@@ -8,11 +8,11 @@ import co.edu.member.service.MemberService;
 import co.edu.member.serviceImpl.MemberServiceImpl;
 import co.edu.member.vo.MemberVO;
 
-public class MemberJoinSession implements DbCommand {
+public class MemberDelete implements DbCommand {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		// 회원가입 처리
+		// 회원탈퇴처리
 		MemberService memberDAO = new MemberServiceImpl();
 		MemberVO vo = new MemberVO();
 		vo.setId(request.getParameter("id"));
@@ -23,12 +23,15 @@ public class MemberJoinSession implements DbCommand {
 		vo.setEmail(request.getParameter("email"));
 		vo.setDate(request.getParameter("date"));
 		vo.setAuthor(request.getParameter("author"));
-
-		int n = memberDAO.insertMember(vo);
+		
+		int n = memberDAO.deleteMember(vo);
 		if(n != 0) {
-			return "memberLogin.do";
+			request.setAttribute("message", "탈퇴가 정상적으로 처리되었습니다. 이용해 주셔서 감사합니다.");
+			return "member/memberMessage.tiles";
 		} else {
-			return "memberJoinForm.do";
+			request.setAttribute("message", "탈퇴가 정상적으로 처리되지 않았습니다. 다시 시도해 주세요");
+			return "member/memberMessage.tiles";
 		}
 	}
+
 }

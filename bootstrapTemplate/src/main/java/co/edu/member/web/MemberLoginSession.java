@@ -29,11 +29,12 @@ public class MemberLoginSession implements DbCommand {
 			session.setAttribute("name", vo.getName());
 			session.setAttribute("author", vo.getAuthor());
 			
-			return "main.do";
+			request.setAttribute("message", vo.getName() + "님 반갑습니다.");
+			return "member/memberMessage.tiles";
 
 		} else {
 			request.setAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
-			return "memberLoginFail.do";
+			return "member/memberMessage.tiles";
 		}
 	}
 
