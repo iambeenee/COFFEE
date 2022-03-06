@@ -10,12 +10,7 @@ public class MemberVO {
 	private String email;
 	private String date;
 	private String author;
-<<<<<<< HEAD
 
-=======
-	
-	//
->>>>>>> branch 'master' of https://github.com/iambeenee/COFFEE.git
 	public String getId() {
 		return id;
 	}
