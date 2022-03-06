@@ -1,4 +1,4 @@
-package co.edu.member.serviceImpl;
+package co.edu.member;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import co.edu.common.DAO;
-import co.edu.member.service.MemberService;
-import co.edu.member.vo.MemberVO;
 
 public class MemberServiceImpl extends DAO implements MemberService {
 	private PreparedStatement psmt;
@@ -54,6 +52,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 			if (rs.next()) {
 				vo = new MemberVO();
 				vo.setId(rs.getString("id"));
+				vo.setPassword(rs.getString("password"));
 				vo.setName(rs.getString("name"));
 				vo.setAddress(rs.getString("address"));
 				vo.setTel(rs.getString("tel"));
@@ -95,7 +94,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 	@Override
 	public int updateMember(MemberVO vo) {
 		// 회원정보수정
-		String sql = "UPDATE MEMBERS SET PASSWORD = ?, NAME = ?, ADDRESSS = ?, TEL = ?, EMAIL = ? WHERE ID = ?";
+		String sql = "UPDATE MEMBERS SET PASSWORD = ?, NAME = ?, ADDRESS = ?, TEL = ?, EMAIL = ? WHERE ID = ?";
 		int n = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -117,7 +116,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 	@Override
 	public int deleteMember(MemberVO vo) {
 		// 회원탈퇴
-		String sql = "DELETE FORM MEMBERS WHERE ID = ?";
+		String sql = "DELETE FROM MEMBERS WHERE ID = ?";
 		int n = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -142,7 +141,9 @@ public class MemberServiceImpl extends DAO implements MemberService {
 			rs = psmt.executeQuery();
 			if (rs.next()) {
 				vo.setName(rs.getString("name"));
-				vo.setAuthor(rs.getString("author"));
+				vo.setAddress(rs.getString("address"));
+				vo.setTel(rs.getString("tel"));
+				vo.setEmail(rs.getString("email"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

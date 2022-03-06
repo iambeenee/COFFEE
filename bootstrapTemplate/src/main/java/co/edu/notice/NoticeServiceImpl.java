@@ -1,4 +1,4 @@
-package co.edu.notice.serviceImpl;
+package co.edu.notice;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import co.edu.common.DAO;
-import co.edu.notice.service.NoticeService;
-import co.edu.notice.vo.NoticeVO;
 
 public class NoticeServiceImpl extends DAO implements NoticeService {
 	private PreparedStatement psmt;
@@ -42,7 +40,7 @@ public class NoticeServiceImpl extends DAO implements NoticeService {
 
 	@Override
 	public int insertNotice(NoticeVO vo) {
-		// TODO Auto-generated method stub
+		// 공지사항 등록
 		return 0;
 	}
 

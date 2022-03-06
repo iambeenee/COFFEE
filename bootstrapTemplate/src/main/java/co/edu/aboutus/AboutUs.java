@@ -10,7 +10,7 @@ public class AboutUs implements DbCommand {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// about us 페이지 불러오기
-		return "about/aboutUs.tiles";
+		return "aboutus/aboutUs.tiles";
 	}
 
 }

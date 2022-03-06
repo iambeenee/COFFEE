@@ -1,4 +1,4 @@
-package co.edu.notice.vo;
+package co.edu.notice;
 
 public class NoticeVO {
 	private int noticeNo;

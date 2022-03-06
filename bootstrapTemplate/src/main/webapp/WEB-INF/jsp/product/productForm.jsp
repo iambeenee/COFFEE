@@ -28,6 +28,7 @@
 <body>
 
 	<script>
+	//업로드할 이미지파일의 섬네일을 띄워주는 function
 		$(document).ready(function () {
 			$('#image').change(function () {
 				console.log('hhhh')

@@ -1,13 +1,13 @@
 package co.edu.product;
 
 import java.sql.PreparedStatement;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import co.edu.common.DAO;
-import co.edu.member.vo.MemberVO;
 
 public class ProductServiceImpl extends DAO implements ProductService {
 
@@ -25,13 +25,13 @@ public class ProductServiceImpl extends DAO implements ProductService {
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				vo = new ProductVO();
-				vo.setpNo(rs.getInt("p_no"));
-				vo.setpName(rs.getString("p_name"));
+				vo.setPno(rs.getInt("p_no"));
+				vo.setPname(rs.getString("p_name"));
 				vo.setKind(rs.getString("kind"));
 				vo.setPrice(rs.getInt("price"));
-				vo.setpContent(rs.getString("p_content"));
+				vo.setPcontent(rs.getString("p_content"));
 				vo.setImage(rs.getString("image"));
-				vo.setRegDate(rs.getString("reg_date"));
+				vo.setRegdate(rs.getString("reg_date"));
 				products.add(vo);
 			}
 		} catch(SQLException e) {
@@ -48,17 +48,17 @@ public class ProductServiceImpl extends DAO implements ProductService {
 		String sql = "SELECT * FROM products WHERE p_no = ?";
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, vo.getpNo());
+			psmt.setInt(1, vo.getPno());
 			rs = psmt.executeQuery();
 			if (rs.next()) {
 				vo = new ProductVO();
-				vo.setpNo(rs.getInt("p_no"));
-				vo.setpName(rs.getString("p_name"));
+				vo.setPno(rs.getInt("p_no"));
+				vo.setPname(rs.getString("p_name"));
 				vo.setKind(rs.getString("kind"));
 				vo.setPrice(rs.getInt("price"));
-				vo.setpContent(rs.getString("p_content"));
+				vo.setPcontent(rs.getString("p_content"));
 				vo.setImage(rs.getString("image"));
-				vo.setRegDate(rs.getString("reg_date"));
+				vo.setRegdate(rs.getString("reg_date"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -72,17 +72,17 @@ public class ProductServiceImpl extends DAO implements ProductService {
 	@Override
 	public int insertProduct(ProductVO vo) {
 		// 상품등록
-		String sql = "INSERT INTO products VALUES(product_seq.nextval, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO products (product_seq.nextval, p_name, kind, price, p_content, image, sysdate) "
+				   + "VALUES(?, ?, ?, ?, ?)";
 		int n = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
 			
-			psmt.setString(1, vo.getpName());
+			psmt.setString(1, vo.getPname());
 			psmt.setString(2, vo.getKind());
 			psmt.setInt(3, vo.getPrice());
-			psmt.setString(4, vo.getpContent());
+			psmt.setString(4, vo.getPcontent());
 			psmt.setString(5, vo.getImage());
-			psmt.setString(6, vo.getRegDate());
 			n = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -98,12 +98,12 @@ public class ProductServiceImpl extends DAO implements ProductService {
 		int n = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, vo.getpName());
+			psmt.setString(1, vo.getPname());
 			psmt.setString(2, vo.getKind());
 			psmt.setInt(3, vo.getPrice());
-			psmt.setString(4, vo.getpContent());
+			psmt.setString(4, vo.getPcontent());
 			psmt.setString(5, vo.getImage());
-			psmt.setInt(6, vo.getpNo());
+			psmt.setInt(6, vo.getPno());
 			n = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -116,11 +116,11 @@ public class ProductServiceImpl extends DAO implements ProductService {
 	@Override
 	public int deleteProduct(ProductVO vo) {
 		// 상품삭제
-		String sql = "DELETE FORM products WHERE p_no = ?";
+		String sql = "DELETE FROM products WHERE p_no = ?";
 		int n = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, vo.getpNo());
+			psmt.setInt(1, vo.getPno());
 			n = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
