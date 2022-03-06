@@ -1,55 +1,122 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<div align='center'>
-	<div>
-		<h1>JOIN</h1>
-	</div>
+<style>
+/* Full-width input fields */
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
 
-	<div>
-		<form id="frm" name="frm" action="memberJoinSession.do" method="POST">
-			<div>
-				<table border="1">
-					<tr>
-						<th width="150">ID</th>
-						<td width="700"><input type="text" id="id" name="id" size="60" required="required" placeholder="ID">&nbsp;&nbsp;
-							<button onclick="id_Check(event)" id="idCheck" value="No">중복체크</button>
-						</td>
-					</tr>
-					<tr>
-						<th width="150">PASSWORD</th>
-						<td width="700"><input type="password" id="password" name="password" size="60" placeholder="PASSWORD"></td>
-					</tr>
-					<tr>
-						<th width="150">PASSWORD CHECK</th>
-						<td width="700"><input type="password" id="password1" name="password1" size="60" placeholder="PASSWORD CHECK"></td>
-					</tr>
-					<tr>
-						<th width="150">NAME</th>
-						<td width="700"><input type="text" id="name" name="name" size="60" placeholder="NAME"></td>
-					</tr>
-					<tr>
-						<th width="150">ADDRESS</th>
-						<td width="700"><input type="text" id="address" name="address" size="60" placeholder="ADDRESS"></td>
-					</tr>
-					<tr>
-						<th width="150">TEL</th>
-						<td width="700"><input type="text" id="tel" name="tel" size="60" placeholder="010-1234-5678"></td>
-					</tr>
-					<tr>
-						<th width="150">EMAIL</th>
-						<td width="700"><input type="email" id="email" name="email" size="60" placeholder="abc@abc.com"></td>
-					</tr>
-				</table>
-			</div><br/>
-			
-			<div>
-				<button type="submit" onclick="formCheck()">회원가입</button>&nbsp;&nbsp;&nbsp;
-				<button type="reset">취 소</button>&nbsp;&nbsp;&nbsp;
+/* Set a style for all buttons */
+button.idCheck {
+	display: inline-block;
+	padding: 5px 10px;
+	border: none; background-color : white;
+	color: black;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	background-color: white;
+}
+
+button.idCheck:hover {
+  background-color: #e69c00;
+}
+
+.button {
+	display: inline-block;
+	padding: 8px 30px;
+	background-color: #ffbe33;
+	color: #ffffff;
+	border-radius: 45px;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	border: none;
+}
+
+.login, .join:hover {
+  background-color: #e69c00;
+}
+
+/* TABLE
+table, td{
+	 border: 1px solid #bcbcbc;
+}*/
+th {
+	width: 170px;
+}
+</style>
+
+<body class="sub_page">
+	<section class="food_section layout_padding">
+		<div class="container" align="center">
+			<div align='center'>
+				<div class="heading_container heading_center">
+					<h2>JOIN</h2>
+				</div>
+				<br />
+				<div>
+					<form id="frm" name="frm" action="memberJoinSession.do"
+						method="POST">
+						<div>
+							<table>
+								<tr>
+									<th>ID</th>
+									<td><input type="text" id="id" name="id" size="60"
+										required="required" placeholder="ID"></td>
+									<td><button class="idCheck" onclick="id_Check(event)"
+											id="idCheck" value="No">중복체크</button></td>
+								</tr>
+								<tr>
+									<th>PASSWORD</th>
+									<td><input type="password" id="password" name="password"
+										size="60" placeholder="PASSWORD"></td>
+								</tr>
+								<tr>
+									<th>PASSWORD CHECK</th>
+									<td><input type="password" id="password1" name="password1"
+										size="60" placeholder="PASSWORD CHECK"></td>
+								</tr>
+								<tr>
+									<th>NAME</th>
+									<td><input type="text" id="name" name="name" size="60"
+										placeholder="NAME"></td>
+								</tr>
+								<tr>
+									<th>ADDRESS</th>
+									<td><input type="text" id="address" name="address"
+										size="60" placeholder="ADDRESS"></td>
+								</tr>
+								<tr>
+									<th>TEL</th>
+									<td><input type="text" id="tel" name="tel" size="60"
+										placeholder="010-1234-5678"></td>
+								</tr>
+								<tr>
+									<th>EMAIL</th>
+									<td><input type="email" id="email" name="email" size="60"
+										placeholder="abc@abc.com"></td>
+								</tr>
+							</table>
+						</div>
+						<br />
+
+						<div>
+							<button class="button" type="submit" onclick="formCheck()">회원가입</button>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<button class="button" type="reset">취 소</button>
+							&nbsp;&nbsp;&nbsp;
+						</div>
+					</form>
+				</div>
 			</div>
-		</form>
-	</div>
-</div>
+		</div>
+	</section>
+</body>
 
 <script type="text/javascript">
 	// ajax로 아이디를 중복체크

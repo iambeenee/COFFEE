@@ -1,13 +1,13 @@
 package co.edu.product;
 
 import java.sql.PreparedStatement;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import co.edu.common.DAO;
-import co.edu.member.vo.MemberVO;
 
 public class ProductServiceImpl extends DAO implements ProductService {
 

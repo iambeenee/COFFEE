@@ -22,14 +22,12 @@ public class MemberLoginSession implements DbCommand {
 		vo.setPassword(request.getParameter("password"));
 
 		vo = memberDAO.loginCheck(vo);
-		System.out.println(vo.getName());
+		
 		// 세션처리
 		if (vo.getName() != null) {
 			session.setAttribute("id", vo.getId());
 			session.setAttribute("name", vo.getName());
 			session.setAttribute("author", vo.getAuthor());
-			
-			System.out.println(vo.getAuthor());
 			
 			return "main.do";
 

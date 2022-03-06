@@ -22,8 +22,6 @@ public class MemberUpdate implements DbCommand {
 		vo.setTel(request.getParameter("tel"));
 		vo.setEmail(request.getParameter("email"));
 		
-		
-		
 		int n = memberDAO.updateMember(vo);
 		if(n != 0) {
 			return "memberUpdateForm.do";

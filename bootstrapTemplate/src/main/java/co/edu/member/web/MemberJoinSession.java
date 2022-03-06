@@ -23,9 +23,6 @@ public class MemberJoinSession implements DbCommand {
 		vo.setEmail(request.getParameter("email"));
 		vo.setDate(request.getParameter("date"));
 		vo.setAuthor(request.getParameter("author"));
-		
-		System.out.println(request.getParameter("id"));
-		System.out.println(request.getParameter("password"));
 
 		int n = memberDAO.insertMember(vo);
 		if(n != 0) {
