@@ -20,7 +20,7 @@
       <li data-filter=".brewing">추출도구</li>
 
       <!-- 상품등록 관리자 권한 부여하기 -->
-      <c:if test="${author eq 'admin'}">
+      <c:if test="${id eq 'admin_h'}">
         <li><a href="productForm.do">상품등록</a></li>
       </c:if>
     </ul>

@@ -2,28 +2,28 @@ package co.edu.product;
 
 public class ProductVO {
 	
-	private int pNo;
-	private String pName;
+	private int pno;
+	private String pname;
 	private String kind;
 	private int price;
-	private String pContent;
+	private String pcontent;
 	private String image;
-	private String regDate;
+	private String regdate;
 	
 	
 	
 	
-	public int getpNo() {
-		return pNo;
+	public int getPno() {
+		return pno;
 	}
-	public void setpNo(int pNo) {
-		this.pNo = pNo;
+	public void setPno(int pno) {
+		this.pno = pno;
 	}
-	public String getpName() {
-		return pName;
+	public String getPname() {
+		return pname;
 	}
-	public void setpName(String pName) {
-		this.pName = pName;
+	public void setPname(String pname) {
+		this.pname = pname;
 	}
 	public String getKind() {
 		return kind;
@@ -37,11 +37,11 @@ public class ProductVO {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public String getpContent() {
-		return pContent;
+	public String getPcontent() {
+		return pcontent;
 	}
-	public void setpContent(String pContent) {
-		this.pContent = pContent;
+	public void setPcontent(String pcontent) {
+		this.pcontent = pcontent;
 	}
 	public String getImage() {
 		return image;
@@ -49,12 +49,17 @@ public class ProductVO {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	public String getRegDate() {
-		return regDate;
+	public String getRegdate() {
+		return regdate;
 	}
-	public void setRegDate(String regDate) {
-		this.regDate = regDate;
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
 	}
+	
+	
+	
+	
+	
 
 	
 
