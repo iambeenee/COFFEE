@@ -16,26 +16,24 @@ public class ProductUpload implements DbCommand {
 		
 		
 		// 상품 등록 처리
-		String pname = request.getParameter("p_name");
-		String kind = request.getParameter("kind");
-		String price = request.getParameter("price");
-		String pcontent = request.getParameter("p_content");
-		String image = request.getParameter("image");
-		String regdate = request.getParameter("reg_date");
+		ProductService productDAO = new ProductServiceImpl();
+		ProductVO vo = new ProductVO();
 		
-		ProductVO product = new ProductVO();
-		product.setPname(pname);
-		product.setKind(kind);
-		product.setPrice(Integer.parseInt(price));
-		product.setPcontent(pcontent);
-		product.setImage(image);
-		product.setRegdate(regdate);
-		
-		ProductService service = new ProductServiceImpl();
-		service.insertProduct(product);
+		vo.setPname(request.getParameter("pname"));
+		vo.setKind(request.getParameter("kind"));
+		vo.setPrice(Integer.parseInt(request.getParameter("price")));
+		vo.setPcontent(request.getParameter("pcontent"));
+		vo.setImage(request.getParameter("image"));
 		
 		
-		return "product/productList.tiles";
+		int n = productDAO.insertProduct(vo);
+		if(n != 0) {
+			return "product/productList.tiles";
+		} else {
+			return "product/productForm.tiles";
+		}
+				
+		
 	}
 
 }

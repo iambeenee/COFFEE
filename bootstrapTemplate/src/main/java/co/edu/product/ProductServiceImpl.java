@@ -28,7 +28,7 @@ public class ProductServiceImpl extends DAO implements ProductService {
 				vo.setPno(rs.getInt("p_no"));
 				vo.setPname(rs.getString("p_name"));
 				vo.setKind(rs.getString("kind"));
-				vo.setPrice(rs.getInt("price"));
+				vo.setPrice(Integer.parseInt(rs.getString("price")));
 				vo.setPcontent(rs.getString("p_content"));
 				vo.setImage(rs.getString("image"));
 				vo.setRegdate(rs.getString("reg_date"));
@@ -55,7 +55,7 @@ public class ProductServiceImpl extends DAO implements ProductService {
 				vo.setPno(rs.getInt("p_no"));
 				vo.setPname(rs.getString("p_name"));
 				vo.setKind(rs.getString("kind"));
-				vo.setPrice(rs.getInt("price"));
+				vo.setPrice(Integer.parseInt(rs.getString("price")));
 				vo.setPcontent(rs.getString("p_content"));
 				vo.setImage(rs.getString("image"));
 				vo.setRegdate(rs.getString("reg_date"));
@@ -72,8 +72,8 @@ public class ProductServiceImpl extends DAO implements ProductService {
 	@Override
 	public int insertProduct(ProductVO vo) {
 		// 상품등록
-		String sql = "INSERT INTO products (product_seq.nextval, p_name, kind, price, p_content, image, sysdate) "
-				   + "VALUES(?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO products (p_no, p_name, kind, price, p_content, image, reg_date) "
+				   + "VALUES(product_seq.nextval, ?, ?, ?, ?, ?, sysdate)";
 		int n = 0;
 		try {
 			psmt = conn.prepareStatement(sql);

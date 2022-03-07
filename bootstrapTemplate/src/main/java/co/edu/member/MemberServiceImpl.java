@@ -144,6 +144,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 				vo.setAddress(rs.getString("address"));
 				vo.setTel(rs.getString("tel"));
 				vo.setEmail(rs.getString("email"));
+				vo.setAuthor(rs.getString("author"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

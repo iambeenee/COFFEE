@@ -6,10 +6,14 @@ nominvalue;
 
 
 create table cart (
-	cart_num     number        primary key,
-	id           varchar2(30)  foreign key for members(id),
-	p_no         number(5)     foreign key for prodcuts(p_no),
-	quantity     nember(5)
+	c_no         number        primary key,
+	id           varchar2(30)  REFERENCES members(id),
+	name         varchar2(20)  not null,
+	p_no         number(5)     REFERENCES products(p_no),
+	p_name       varchar2(200) not null,	 
+	quantity     number(5)     default '1',
+	amount       number(10)    not null,
+	image        varchar2(100)
 );
 
 

@@ -70,7 +70,7 @@
 							<th width="100">분류</th>
 							<td><select id="kind" name="kind">
 									<option value="a">원두</option>
-									<option value="b">생두</option>
+									<option value="b">드립백</option>
 									<option value="c">선물세트</option>
 									<option value="d">추출도구</option>
 								</select></td>

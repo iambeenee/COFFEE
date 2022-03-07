@@ -18,8 +18,8 @@ public class ProductList implements DbCommand {
 		ProductService service = new ProductServiceImpl();
 		List<ProductVO> list = service.selectProductList();
 		
-		request.setAttribute("list", list);
-		request.setAttribute("products", "hhhhh");
+		request.setAttribute("products", list);
+		
 		
 		return "product/productList.tiles";
 	}
