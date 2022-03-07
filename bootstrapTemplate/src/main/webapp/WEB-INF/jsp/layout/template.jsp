@@ -41,8 +41,6 @@
   <tiles:insertAttribute name="body"></tiles:insertAttribute>
   <tiles:insertAttribute name="foot"></tiles:insertAttribute>
 
-<<<<<<< HEAD
-=======
   <!-- offer section -->
 <!-- 
   <section class="offer_section layout_padding-bottom">
@@ -234,7 +232,6 @@
 
   <!-- end about section -->
 
->>>>>>> branch 'master' of https://github.com/iambeenee/COFFEE.git
   <!-- client section -->
 
   <!-- <section class="client_section layout_padding-bottom">
