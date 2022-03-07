@@ -13,7 +13,7 @@ input[type=text], input[type=password] {
 }
 
 /* Set a style for all buttons */
-.login, .join {
+button, .join {
 	display: inline-block;
 	padding: 8px 30px;
 	background-color: #ffbe33;
@@ -24,7 +24,7 @@ input[type=text], input[type=password] {
 	border: none;
 }
 
-.login, .join:hover {
+button, .join:hover {
 	background-color: #e69c00;
 }
 </style>

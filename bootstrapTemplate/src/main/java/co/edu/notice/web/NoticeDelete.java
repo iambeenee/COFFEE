@@ -16,14 +16,10 @@ public class NoticeDelete implements DbCommand {
 		NoticeService dao = new NoticeServiceImpl();
 		NoticeVO vo = new NoticeVO();
 		vo.setNoticeNo(Integer.parseInt(request.getParameter("noticeNo")));
-//		vo.setnSubject(request.getParameter("nSubject"));
-//		vo.setnContent(request.getParameter("nCountent"));
-//		vo.setnDate(request.getParameter("nDate"));
-//		vo.setHit(Integer.parseInt(request.getParameter("hit")));
 		
 		int n = dao.deleteNotice(vo);
 		if(n != 0) {
-			return "notice/noticeList.tiles";
+			return "noticeList.do";
 		} else {
 			request.setAttribute("message", "삭제가 정상적으로 처리되지 않았습니다. 다시 시도해 주세요");
 			return "member/memberMessage.tiles";

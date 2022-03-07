@@ -35,7 +35,6 @@ import co.edu.product.web.ProductUpload;
 import co.edu.member.web.AjaxIdCheck;
 import co.edu.member.web.Logout;
 
-
 //@WebServlet("/FrontController")
 public class FrontController extends HttpServlet {
 
@@ -65,13 +64,11 @@ public class FrontController extends HttpServlet {
 		//ABOUT US
 		map.put("/aboutUs.do", new AboutUs());
 		
-		
 		//PRODUCT
 		map.put("/productList.do", new ProductList()); //상품리스트
 		map.put("/productForm.do", new ProductForm()); //상품등록(관리자 권한)
 		map.put("/productUpload.do", new ProductUpload()); //상품업로드
 		map.put("/productDetail.do", new ProductDetail());
-		
 		
 		//CART
 		map.put("/cartList.do", new CartList());    //장바구니
@@ -84,6 +81,9 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeUpdateForm.do", new NoticeUpdateForm()); // 수정 폼 호출
 		map.put("/noticeUpdate.do", new NoticeUpdate()); // 수정 처리
 		map.put("/noticeDelete.do", new NoticeDelete()); //삭제 처리
+		
+		//Q&A
+		//map.put("/qnalist.do", new Qnalist()); // 리스트
 		
 
 	}

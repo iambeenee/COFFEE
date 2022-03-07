@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+	pageEncoding="UTF-8"%>
+
 <!-- about section -->
 <body class="sub_page">
-	<section class="about_section layout_padding">
-		 <div class="container  ">
+	<section class="food_section layout_padding">
+		<div class="container">
+
 			<div class="row">
 				<div class="col-md-6 ">
 					<div class="img-box">
@@ -15,8 +16,9 @@
 					<div class="detail-box">
 						<div class="heading_container">
 							<h2>We Are Coffee Beans</h2>
+							<br/>
 						</div>
-						<p>There are many variations of passages of Lorem Ipsum
+						<p  style="line-height:50px">There are many variations of passages of Lorem Ipsum
 							available, but the majority have suffered alteration in some
 							form, by injected humour, or randomised words which don't look
 							even slightly believable. If you are going to use a passage of

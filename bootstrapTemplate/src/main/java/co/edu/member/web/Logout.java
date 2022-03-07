@@ -15,7 +15,6 @@ public class Logout implements DbCommand {
 		HttpSession session = request.getSession();
 		session.invalidate(); // 세션자체를 삭제
 		
-		
 		request.setAttribute("message", "정상적으로 로그아웃되었습니다.");
 		
 		return "member/memberMessage.tiles";

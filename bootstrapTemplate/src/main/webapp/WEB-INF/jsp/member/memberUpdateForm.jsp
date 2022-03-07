@@ -19,7 +19,7 @@ input {
 }
 
 /* Set a style for all buttons */
-button, .withdraw {
+button {
 	display: inline-block;
 	padding: 8px 30px;
 	background-color: #ffbe33;
@@ -30,7 +30,7 @@ button, .withdraw {
 	border: none;
 }
 
-button, .withdraw:hover {
+button:hover {
   background-color: #e69c00;
 }
 
@@ -93,9 +93,9 @@ td {
 					</table>
 					<br/>
 					<div>
-						<button type="submit" onclick="formCheck()">수정완료</button>
+						<button type="submit" onClick="formCheck()">수정완료</button>
 						&nbsp;&nbsp;&nbsp;
-						<a class="withdraw" href="memberDelete.do">회원탈퇴</a>
+						<button type="button" onClick="location.href='memberDelete.do?id=${member.id }'">회원탈퇴</button>
 					</div>
 				</form>
 			</div>

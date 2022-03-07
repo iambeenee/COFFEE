@@ -3,10 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <style>
-/* 한글 폰트 */
-	h1{
-		font-family: "Open Sans", sans-serif;
-	}
+table {
+	border-spacing: 10px;
+	border-collapse: separate;
+	font-size: 18px;
+}
 </style>
 
 <body class="sub_page">
@@ -14,7 +15,7 @@
 		<div class="container" align="center">
 			<div align='center'>
 				<div class="heading_container heading_center">
-					<h1>회 원 정 보</h1>
+					<h2>MEMBER LIST</h2>
 				</div>
 				<br />
 

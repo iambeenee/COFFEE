@@ -2,6 +2,7 @@ package co.edu.member.web;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import co.edu.common.DbCommand;
 import co.edu.member.MemberService;
@@ -16,15 +17,12 @@ public class MemberDelete implements DbCommand {
 		MemberService memberDAO = new MemberServiceImpl();
 		MemberVO vo = new MemberVO();
 		vo.setId(request.getParameter("id"));
-		vo.setPassword(request.getParameter("password"));
-		vo.setName(request.getParameter("name"));
-		vo.setAddress(request.getParameter("address"));
-		vo.setTel(request.getParameter("tel"));
-		vo.setEmail(request.getParameter("email"));
-		vo.setDate(request.getParameter("date"));
-		vo.setAuthor(request.getParameter("author"));
 		
 		int n = memberDAO.deleteMember(vo);
+		
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
 		if(n != 0) {
 			request.setAttribute("message", "탈퇴가 정상적으로 처리되었습니다. 이용해 주셔서 감사합니다.");
 			return "member/memberMessage.tiles";

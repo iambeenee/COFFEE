@@ -3,6 +3,26 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <style>
+table {
+	border-spacing: 10px;
+	border-collapse: separate;
+	font-size: 20px;
+}
+
+button {
+	display: inline-block;
+	padding: 8px 30px;
+	background-color: #ffbe33;
+	color: #ffffff;
+	border-radius: 45px;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	border: none;
+}
+
+button:hover {
+  background-color: #e69c00;
+}
 </style>
 
 <body class="sub_page">
@@ -12,6 +32,7 @@
 				<div class="heading_container heading_center">
 					<h2>NOTICE</h2>
 				</div>
+				<br/>
 				<form id="frm" name="frm" action="noticeSelect.do" method="POST">
 					<input type="hidden" id="noticeNo" name="noticeNo">
 				</form>
@@ -33,11 +54,12 @@
 							</tr>
 						</c:forEach>
 					</table>
-				</div><br/>
+				</div>
+				<br />
 				<div>
-				<c:if test="${author eq 'admin' }">
-					<button type="button" onClick="location.href='noticeInsertForm.do'">등록</button>
-				</c:if>
+					<c:if test="${author eq 'admin' }">
+						<button type="button" onClick="location.href='noticeInsertForm.do'">등록</button>
+					</c:if>
 				</div>
 			</div>
 		</div>
