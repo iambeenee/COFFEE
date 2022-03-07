@@ -11,8 +11,6 @@ public class ProductVO {
 	private String regdate;
 	
 	
-	
-	
 	public int getPno() {
 		return pno;
 	}
@@ -55,6 +53,10 @@ public class ProductVO {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
+	
+	
+	
+	
 	
 	
 	

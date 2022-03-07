@@ -38,7 +38,7 @@
             <div class="user_option">
 				<c:if test="${not empty id && author eq 'user' }">
 					<a href="memberUpdateForm.do" class="user_link">MYPAGE</a>
-					<a href="#" class="user_link">CART</a>
+					<a href="cartList.do" class="user_link">CART</a>
 					<a href="logout.do" class="order_online">LOGOUT</a>
 				</c:if>
 				<c:if test="${not empty id && author eq 'admin' }">
