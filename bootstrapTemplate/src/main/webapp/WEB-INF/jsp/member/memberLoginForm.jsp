@@ -37,8 +37,7 @@ input[type=text], input[type=password] {
 			</div>
 			<br />
 			<p></p>
-			<form id="frm" name="frm" action="memberLoginSession.do"
-				method="POST" onsubmit="check_id_submit(event)">
+			<form id="frm" name="frm" action="memberLoginSession.do" method="POST" onsubmit="check_id_submit(event)">
 				<table>
 					<tr>
 						<th>ID</th>

@@ -2,7 +2,6 @@ package co.edu.common;
 
 import java.io.IOException;
 
-
 import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
@@ -20,6 +19,13 @@ import co.edu.member.web.MemberLogin;
 import co.edu.member.web.MemberLoginSession;
 import co.edu.member.web.MemberUpdate;
 import co.edu.member.web.MemberUpdateForm;
+import co.edu.notice.web.NoticeList;
+import co.edu.notice.web.NoticeSelect;
+import co.edu.notice.web.NoticeUpdate;
+import co.edu.notice.web.NoticeUpdateForm;
+import co.edu.notice.web.NoticeDelete;
+import co.edu.notice.web.NoticeInsert;
+import co.edu.notice.web.NoticeInsertForm;
 import co.edu.member.web.MemberDelete;
 import co.edu.member.web.MemberJoinSession;
 import co.edu.product.web.ProductForm;
@@ -67,6 +73,15 @@ public class FrontController extends HttpServlet {
 		
 		//CART
 		map.put("/cartList.do", new CartList());    //장바구니
+		
+		//NOTICE
+		map.put("/noticeList.do", new NoticeList()); // 리스트
+		map.put("/noticeSelect.do", new NoticeSelect()); // 선택 - 세부내역보기
+		map.put("/noticeInsertForm.do", new NoticeInsertForm()); // 등록 폼 호출
+		map.put("/noticeInsert.do", new NoticeInsert()); // 등록 처리
+		map.put("/noticeUpdateForm.do", new NoticeUpdateForm()); // 수정 폼 호출
+		map.put("/noticeUpdate.do", new NoticeUpdate()); // 수정 처리
+		map.put("/noticeDelete.do", new NoticeDelete()); //삭제 처리
 		
 
 	}

@@ -14,7 +14,7 @@
 		<div class="container" align="center">
 			<div align='center'>
 				<div class="heading_container heading_center">
-					<h1>회 원 정 보 수 정</h1>
+					<h1>회 원 정 보</h1>
 				</div>
 				<br />
 
@@ -22,11 +22,11 @@
 					<thead>
 						<tr>
 							<th width="100">id</th>
-							<th width="200">name</th>
-							<th width="100">address</th>
-							<th width="100">tel</th>
-							<th width="100">email</th>
-							<th width="100">join date</th>
+							<th width="100">name</th>
+							<th width="200">address</th>
+							<th width="200">tel</th>
+							<th width="200">email</th>
+							<th width="200">join date</th>
 						</tr>
 					</thead>
 					<tbody>

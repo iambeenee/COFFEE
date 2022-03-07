@@ -28,7 +28,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 				vo.setName(rs.getString("name"));
 				vo.setAddress(rs.getString("address"));
 				vo.setTel(rs.getString("tel"));
-				vo.setDate(rs.getString("date"));
+				vo.setDate(rs.getString("join_date"));
 				vo.setEmail(rs.getString("email"));
 				vo.setAuthor(rs.getString("author"));
 				members.add(vo);
@@ -144,6 +144,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 				vo.setAddress(rs.getString("address"));
 				vo.setTel(rs.getString("tel"));
 				vo.setEmail(rs.getString("email"));
+				vo.setAuthor(rs.getString("author"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

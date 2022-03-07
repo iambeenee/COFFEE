@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.catalina.filters.AddDefaultCharsetFilter;
+
 import co.edu.common.DAO;
 
 public class NoticeServiceImpl extends DAO implements NoticeService {
@@ -21,12 +23,12 @@ public class NoticeServiceImpl extends DAO implements NoticeService {
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
-			while(rs.next()) {
+			while (rs.next()) {
 				vo = new NoticeVO();
-				vo.setNoticeNo(rs.getInt("noticeNo"));
-				vo.setnSubject(rs.getString("nSubject"));
-				vo.setnContent(rs.getString("nContent"));
-				vo.setnDate(rs.getString("nDate"));
+				vo.setNoticeNo(rs.getInt("notice_no"));
+				vo.setnSubject(rs.getString("n_subject"));
+				vo.setnContent(rs.getString("n_content"));
+				vo.setnDate(rs.getString("n_date"));
 				vo.setHit(rs.getInt("hit"));
 				notice.add(vo);
 			}
@@ -39,21 +41,93 @@ public class NoticeServiceImpl extends DAO implements NoticeService {
 	}
 
 	@Override
+	public NoticeVO selectNotice(NoticeVO vo) {
+		// 단건조회
+		String sql = "SELECT * FROM NOTICE WHERE NOTICE_NO = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, vo.getNoticeNo());
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				vo.setnSubject(rs.getString("n_subject"));
+				vo.setnContent(rs.getString("n_content"));
+				vo.setnDate(rs.getString("n_date"));
+				vo.setHit(rs.getInt("hit"));
+				addCount(vo.getNoticeNo());
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return vo;
+	}
+
+	public void addCount(int noticeNo) {
+		String sql = "UPDATE NOTICE SET HIT = HIT + 1 WHERE NOTICE_NO = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, noticeNo);
+			int n = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+	}
+
+	@Override
 	public int insertNotice(NoticeVO vo) {
 		// 공지사항 등록
-		return 0;
+		String sql = "INSERT INTO NOTICE(NOTICE_NO, N_SUBJECT, N_CONTENT, N_DATE, HIT) VALUES (NOTICE_SEQ.NEXTVAL, ?, ?, SYSDATE, 0)";
+		int n = 0;
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getnSubject());
+			psmt.setString(2, vo.getnContent());
+			n = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return n;
 	}
 
 	@Override
 	public int updateNotice(NoticeVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		// 수정
+		String sql = "UPDATE NOTICE SET N_SUBJECT = ?, N_CONTENT = ? WHERE NOTICE_NO = ?";
+		int n = 0;
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getnSubject());
+			psmt.setString(2, vo.getnContent());
+			psmt.setInt(3, vo.getNoticeNo());
+			n = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return n;
 	}
 
 	@Override
 	public int deleteNotice(NoticeVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		// 삭제
+		String sql = "DELETE FROM NOTICE WHERE NOTICE_NO = ?";
+		int n = 0;
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, vo.getNoticeNo());
+			n = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return n;
 	}
 
 	private void close() {

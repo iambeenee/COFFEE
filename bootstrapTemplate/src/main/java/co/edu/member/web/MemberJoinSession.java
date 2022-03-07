@@ -26,7 +26,8 @@ public class MemberJoinSession implements DbCommand {
 
 		int n = memberDAO.insertMember(vo);
 		if(n != 0) {
-			return "memberLogin.do";
+			request.setAttribute("message", "회원가입을 축하합니다.");
+			return "member/memberMessage.tiles";
 		} else {
 			return "memberJoinForm.do";
 		}

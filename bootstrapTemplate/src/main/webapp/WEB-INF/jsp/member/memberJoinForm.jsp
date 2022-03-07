@@ -3,7 +3,7 @@
 
 <style>
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input {
 	width: 100%;
 	padding: 12px 20px;
 	margin: 8px 0;
@@ -56,8 +56,7 @@ th {
 				</div>
 				<br />
 				<div>
-					<form id="frm" name="frm" action="memberJoinSession.do"
-						method="POST">
+					<form id="frm" name="frm" action="memberJoinSession.do" method="POST">
 						<div>
 							<table>
 								<tr>
