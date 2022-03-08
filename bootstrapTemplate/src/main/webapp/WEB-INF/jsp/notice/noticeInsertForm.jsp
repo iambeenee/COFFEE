@@ -48,12 +48,12 @@ th {
 						<table>
 							<tr>
 								<th>Subject</th>
-								<td><input type="text" size="90" id="subject"
+								<td><input type="text" size="90" id="subject" required
 									name="subject"></td>
 							</tr>
 							<tr>
 								<th>Content</th>
-								<td><textarea id="content" name="content" rows="20"
+								<td><textarea id="content" name="content" rows="20" required
 										cols="90"></textarea></td>
 							</tr>
 						</table>
@@ -64,7 +64,7 @@ th {
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<input type="reset" value="새로 작성하기">
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="button" value="목록가기" onclick="location.href='noticeList.do'">
+						<input type="button" value="목록가기" onClick="location.href='noticeList.do'">
 					</div>
 				</form>
 			</div>

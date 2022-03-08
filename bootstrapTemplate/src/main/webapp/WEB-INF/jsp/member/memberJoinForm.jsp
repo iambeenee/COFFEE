@@ -82,22 +82,22 @@ th {
 								</tr>
 								<tr>
 									<th>NAME</th>
-									<td><input type="text" id="name" name="name" size="60"
+									<td><input type="text" id="name" name="name" size="60" required
 										placeholder="NAME"></td>
 								</tr>
 								<tr>
 									<th>ADDRESS</th>
-									<td><input type="text" id="address" name="address"
+									<td><input type="text" id="address" name="address" required
 										size="60" placeholder="ADDRESS"></td>
 								</tr>
 								<tr>
 									<th>TEL</th>
-									<td><input type="text" id="tel" name="tel" size="60"
+									<td><input type="text" id="tel" name="tel" size="60" required
 										placeholder="010-1234-5678"></td>
 								</tr>
 								<tr>
 									<th>EMAIL</th>
-									<td><input type="email" id="email" name="email" size="60"
+									<td><input type="email" id="email" name="email" size="60" required
 										placeholder="abc@abc.com"></td>
 								</tr>
 							</table>
@@ -105,7 +105,7 @@ th {
 						<br />
 						<div>
 							<button type="submit" onclick="formCheck()">회원가입</button>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<button type="reset">취 소</button>
 							&nbsp;&nbsp;&nbsp;
 						</div>

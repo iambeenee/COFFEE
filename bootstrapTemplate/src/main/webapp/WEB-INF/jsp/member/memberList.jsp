@@ -6,7 +6,7 @@
 table {
 	border-spacing: 10px;
 	border-collapse: separate;
-	font-size: 18px;
+	font-size: 20px;
 }
 </style>
 

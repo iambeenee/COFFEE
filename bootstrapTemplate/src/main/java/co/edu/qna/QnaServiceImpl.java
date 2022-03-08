@@ -6,25 +6,25 @@ public class QnaServiceImpl implements QnaService {
 
 	@Override
 	public List<QnaVO> selectQnaList() {
-		// 
+		// 전체조회
 		return null;
 	}
 
 	@Override
 	public QnaVO selectQna(QnaVO vo) {
-		// TODO Auto-generated method stub
+		// 단건조회
 		return null;
 	}
 
 	@Override
 	public int insertQna(QnaVO vo) {
-		// TODO Auto-generated method stub
+		// qna 등록
 		return 0;
 	}
 
 	@Override
 	public int deleteQna(QnaVO vo) {
-		// TODO Auto-generated method stub
+		// qna 삭제
 		return 0;
 	}
 

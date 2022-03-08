@@ -46,13 +46,13 @@
                사업자등록   3456753123
             </p>
             <div class="footer_social">
-              <a href="">
+              <a href="https://ko-kr.facebook.com/" target="_blank">
                 <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
+              </a>&nbsp;&nbsp;&nbsp;
+              <a href="https://twitter.com/?lang=ko" target="_blank">
                 <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
+              </a>&nbsp;&nbsp;&nbsp;
+              <a href="https://www.instagram.com/?hl=ko" target="_blank">
                 <i class="fa fa-instagram" aria-hidden="true"></i>
               </a>
             </div>
@@ -77,8 +77,7 @@
     </div>
       <div class="footer-info">
         <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Coffee Beans</a><br><br>
+          &copy; <span id="displayYear"></span> All Rights Reserved By Coffee Beans
         </p>
       </div>
   </footer>

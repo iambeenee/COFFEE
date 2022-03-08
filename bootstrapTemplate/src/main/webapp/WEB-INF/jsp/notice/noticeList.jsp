@@ -41,8 +41,8 @@ button:hover {
 					<table>
 						<tr>
 							<th width="50">No</th>
-							<th width="300">Subject</th>
-							<th width="200">Date</th>
+							<th width="400">Subject</th>
+							<th width="250">Date</th>
 							<th width="50">Hit</th>
 						</tr>
 						<c:forEach items="${notices}" var="notice">

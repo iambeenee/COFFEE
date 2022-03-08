@@ -13,7 +13,7 @@ input[type=text], input[type=password] {
 }
 
 /* Set a style for all buttons */
-button, .join {
+button {
 	display: inline-block;
 	padding: 8px 30px;
 	background-color: #ffbe33;
@@ -24,8 +24,12 @@ button, .join {
 	border: none;
 }
 
-button, .join:hover {
+button:hover {
 	background-color: #e69c00;
+}
+
+th{
+	width: 100px;
 }
 </style>
 
@@ -37,7 +41,8 @@ button, .join:hover {
 			</div>
 			<br />
 			<p></p>
-			<form id="frm" name="frm" action="memberLoginSession.do" method="POST" onsubmit="check_id_submit(event)">
+			<form id="frm" name="frm" action="memberLoginSession.do"
+				method="POST" onsubmit="check_id_submit(event)">
 				<table>
 					<tr>
 						<th>ID</th>
@@ -49,16 +54,14 @@ button, .join:hover {
 						<td width="300"><input type="password" id="password"
 							name="password" required></td>
 					</tr>
-					<tr>
-						<td><br /></td>
-					<tr>
-						<td width="150"></td>
-						<td width="300">
-							<button class="login" type="submit">로그인</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<a class="join" href="memberJoinForm.do">회원가입</a>
-						</td>
-					</tr>
 				</table>
+				<br />
+				<div>
+					<button class="login" type="submit">로그인</button>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<button type="button" onClick="location.href='memberJoinForm.do'">회원가입</button>
+					<!-- <a class="join" href="memberJoinForm.do">회원가입</a> -->
+				</div>
 				<div></div>
 			</form>
 		</div>
