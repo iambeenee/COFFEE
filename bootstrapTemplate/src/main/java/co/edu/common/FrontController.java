@@ -32,6 +32,7 @@ import co.edu.product.web.ProductDetail;
 import co.edu.product.web.ProductForm;
 import co.edu.product.web.ProductList;
 import co.edu.product.web.ProductUpload;
+import co.edu.qna.web.QnaList;
 import co.edu.member.web.AjaxIdCheck;
 import co.edu.member.web.Logout;
 
@@ -83,7 +84,7 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeDelete.do", new NoticeDelete()); //삭제 처리
 		
 		//Q&A
-		//map.put("/qnalist.do", new Qnalist()); // 리스트
+		map.put("/qnaList.do", new QnaList()); // 리스트
 		
 
 	}

@@ -32,7 +32,7 @@
 			  	<a class="nav-link" href="noticeList.do">NOTICE</a>
 			  </li>
 			  <li class="nav-item">
-			  	<a class="nav-link" href="qnalist.do">Q&A</a>
+			  	<a class="nav-link" href="qnaList.do">Q&A</a>
 			  </li>
 			</ul>
             <div class="user_option">

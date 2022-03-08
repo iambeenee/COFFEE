@@ -26,5 +26,4 @@ public class MemberUpdateForm implements DbCommand {
 
 		return "member/memberUpdateForm.tiles";
 	}
-
 }

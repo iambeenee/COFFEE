@@ -1,31 +1,131 @@
 package co.edu.qna;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
-public class QnaServiceImpl implements QnaService {
+import co.edu.common.DAO;
+import co.edu.member.MemberVO;
+
+public class QnaServiceImpl extends DAO implements QnaService {
+	private PreparedStatement psmt;
+	private ResultSet rs;
 
 	@Override
 	public List<QnaVO> selectQnaList() {
 		// 전체조회
-		return null;
+		List<QnaVO> qna = new ArrayList<>();
+		QnaVO vo;
+		String sql = "SELECT * FROM QNA ORDER BY QNO";
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				vo = new QnaVO();
+				vo.setqNo(rs.getInt("q_no"));
+				vo.setqName(rs.getString("q_name"));
+				vo.setqSubject(rs.getString("q_subject"));
+				vo.setqContent(rs.getString("q_content"));
+				vo.setqRep(rs.getString("q_rep"));
+				vo.setqDate(rs.getString("q_date"));
+				vo.setHit(rs.getShort("hit"));
+				qna.add(vo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return qna;
 	}
 
 	@Override
 	public QnaVO selectQna(QnaVO vo) {
 		// 단건조회
-		return null;
+		String sql = "SELECT * FROM QNA WHERE Q_NO = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, vo.getqNo());
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				vo.setqNo(rs.getInt("q_no"));
+				vo.setqName(rs.getString("q_name"));
+				vo.setqSubject(rs.getString("q_subject"));
+				vo.setqContent(rs.getString("q_content"));
+				vo.setqRep(rs.getString("q_rep"));
+				vo.setqDate(rs.getString("q_date"));
+				addCount(vo.getqNo());
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return vo;
+	}
+
+	public void addCount(int qNo) {
+		String sql = "UPDATE QNA SET HIT = HIT + 1 WHERE Q_NO = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, qNo);
+			int n = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
 	}
 
 	@Override
 	public int insertQna(QnaVO vo) {
 		// qna 등록
-		return 0;
+		MemberVO MVO = new MemberVO();
+		String sql = "INSERT INTO QNA(Q_NO, Q_NAME, Q_SUBJECT, Q_CONTENT, Q_DATE, HIT) VALUES(QNA_SEQ.NEXTVAL, ?, ?, ?, SYSDATE, 0)";
+		int n = 0;
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, MVO.getId());
+			psmt.setString(2, vo.getqSubject());
+			psmt.setString(3, vo.getqContent());
+			n = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return n;
 	}
 
 	@Override
 	public int deleteQna(QnaVO vo) {
 		// qna 삭제
-		return 0;
+		String sql = "DELETE FROM QNA WHERE Q_NO = ?";
+		int n = 0;
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, vo.getqNo());
+			n = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return n;
 	}
 
+	private void close() {
+		try {
+			if (rs != null)
+				rs.close();
+			if (psmt != null)
+				psmt.close();
+			if (conn != null)
+				conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }
