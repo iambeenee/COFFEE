@@ -22,7 +22,7 @@
       <li data-filter=".d">추출도구</li>
 
       <!-- 상품등록 관리자 권한 부여하기 -->
-      <c:if test="${id eq 'admin_h'}">
+      <c:if test="${author eq 'admin'}">
         <li><a href="productForm.do">상품등록</a></li>
       </c:if>
     </ul>
@@ -37,7 +37,7 @@
           <div class="box">
             <div>
               <div class="img-box">
-                <a href="/product/productDetail/${product.pno }">
+                <a href="productDetail.do?pno=${product.pno }">
                 <img src="images/${product.image }"></a>
               </div>
               <div class="detail-box">
