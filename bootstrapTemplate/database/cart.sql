@@ -8,12 +8,9 @@ nominvalue;
 create table cart (
 	c_no         number        primary key,
 	id           varchar2(30)  REFERENCES members(id),
-	name         varchar2(20)  not null,
 	p_no         number(5)     REFERENCES products(p_no),
-	p_name       varchar2(200) not null,	 
-	quantity     number(5)     default '1',
-	amount       number(10)    not null,
-	image        varchar2(100)
+	quantity     number(5)     not null,
+	amount       number(10)    not null
 );
 
 
