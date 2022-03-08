@@ -7,12 +7,13 @@ nominvalue;
 
 create table qna (
      q_no       number(5)       primary key,
+     q_name		varchar2(20)	references members(name),
      q_subject  varchar2(50)    not null,
      q_content  varchar2(1000)  not null,
-     q_reply    varchar2(1000),
-     id         varchar2(30)    references members(id),
+     reply      varchar2(1000),
      q_rep      char(1)         default 1,
-     q_date     date            default sysdate
+     q_date     date            default sysdate,
+     r_date     date			default sysdate
      );
  
      
