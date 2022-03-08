@@ -2,14 +2,13 @@ package co.edu.qna;
 
 public class QnaVO {
 	//
-	private int qNo;
-	private String qName;
-	private String qSubject;
-	private String qContent;
-	private String reply;
-	private String qRep;
-	private String qDate;
-	private String rDate;
+	private int qNo; // qna 번호
+	private String qName; // 작성자 -> member(id)참조
+	private String qSubject; // 제목
+	private String qContent; // 내용
+	private String qRep; // 답변 여부
+	private String qDate; // 작성날짜
+	private int hit; // 조회수
 	
 	//
 	public int getqNo() {
@@ -36,12 +35,6 @@ public class QnaVO {
 	public void setqContent(String qContent) {
 		this.qContent = qContent;
 	}
-	public String getReply() {
-		return reply;
-	}
-	public void setReply(String reply) {
-		this.reply = reply;
-	}
 	public String getqRep() {
 		return qRep;
 	}
@@ -54,12 +47,10 @@ public class QnaVO {
 	public void setqDate(String qDate) {
 		this.qDate = qDate;
 	}
-	public String getrDate() {
-		return rDate;
+	public int getHit() {
+		return hit;
 	}
-	public void setrDate(String rDate) {
-		this.rDate = rDate;
+	public void setHit(int hit) {
+		this.hit = hit;
 	}
-
-	
 }

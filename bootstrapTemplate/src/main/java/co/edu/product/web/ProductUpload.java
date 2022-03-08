@@ -28,7 +28,7 @@ public class ProductUpload implements DbCommand {
 		
 		int n = productDAO.insertProduct(vo);
 		if(n != 0) {
-			return "product/productList.tiles";
+			return "productList.do";
 		} else {
 			return "product/productForm.tiles";
 		}

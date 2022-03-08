@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import co.edu.common.DAO;
+import co.edu.member.MemberVO;
 
 public class QnaServiceImpl extends DAO implements QnaService {
 	private PreparedStatement psmt;
@@ -27,10 +28,9 @@ public class QnaServiceImpl extends DAO implements QnaService {
 				vo.setqName(rs.getString("q_name"));
 				vo.setqSubject(rs.getString("q_subject"));
 				vo.setqContent(rs.getString("q_content"));
-				vo.setReply(rs.getString("reply"));
 				vo.setqRep(rs.getString("q_rep"));
 				vo.setqDate(rs.getString("q_date"));
-				vo.setrDate(rs.getString("r_date"));
+				vo.setHit(rs.getShort("hit"));
 				qna.add(vo);
 			}
 		} catch (SQLException e) {
@@ -54,10 +54,9 @@ public class QnaServiceImpl extends DAO implements QnaService {
 				vo.setqName(rs.getString("q_name"));
 				vo.setqSubject(rs.getString("q_subject"));
 				vo.setqContent(rs.getString("q_content"));
-				vo.setReply(rs.getString("reply"));
 				vo.setqRep(rs.getString("q_rep"));
 				vo.setqDate(rs.getString("q_date"));
-				vo.setrDate(rs.getString("r_date"));
+				addCount(vo.getqNo());
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -67,23 +66,54 @@ public class QnaServiceImpl extends DAO implements QnaService {
 		return vo;
 	}
 
+	public void addCount(int qNo) {
+		String sql = "UPDATE QNA SET HIT = HIT + 1 WHERE Q_NO = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, qNo);
+			int n = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+	}
+
 	@Override
 	public int insertQna(QnaVO vo) {
 		// qna 등록
-		String sql = "insert into qna(q_no, q_name, q_subject, q_content, q_rep, q_date) values(qna_seq.nextval, )";
-		return 0;
-	}
-	
-	@Override
-	public int insertReply(QnaVO vo) {
-		// 댓글 등록
-		return 0;
+		MemberVO MVO = new MemberVO();
+		String sql = "INSERT INTO QNA(Q_NO, Q_NAME, Q_SUBJECT, Q_CONTENT, Q_DATE, HIT) VALUES(QNA_SEQ.NEXTVAL, ?, ?, ?, SYSDATE, 0)";
+		int n = 0;
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, MVO.getId());
+			psmt.setString(2, vo.getqSubject());
+			psmt.setString(3, vo.getqContent());
+			n = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return n;
 	}
 
 	@Override
 	public int deleteQna(QnaVO vo) {
 		// qna 삭제
-		return 0;
+		String sql = "DELETE FROM QNA WHERE Q_NO = ?";
+		int n = 0;
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, vo.getqNo());
+			n = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return n;
 	}
 
 	private void close() {
