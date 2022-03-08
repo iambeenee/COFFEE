@@ -104,7 +104,7 @@ th {
 						</div>
 						<br />
 						<div>
-							<button type="submit" onclick="formCheck()">회원가입</button>
+							<button type="submit" onclick="formCheck(event)">회원가입</button>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<button type="reset">취 소</button>
 							&nbsp;&nbsp;&nbsp;
@@ -144,10 +144,12 @@ th {
 	}
 
 	// 비밀번호 일치여부 확인
-	function formCheck() {
+	function formCheck(e) {
+		e.preventDefault();
 		if (frm.idCheck.value != 'Yes') {
 			alert("아이디 중복체크를 해주세요.");
 			frm.id.focus();
+			return;
 		}
 
 		if (frm.password.value != frm.password1.value) {
@@ -155,6 +157,8 @@ th {
 			frm.password.value = "";
 			frm.password1.value = "";
 			frm.password.focus();
+			return;
 		}
+		frm.submit();
 	}
 </script>

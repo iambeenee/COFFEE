@@ -10,10 +10,9 @@ create table qna (
      q_name		varchar2(20)	references members(name),
      q_subject  varchar2(50)    not null,
      q_content  varchar2(1000)  not null,
-     reply      varchar2(1000),
      q_rep      char(1)         default 1,
      q_date     date            default sysdate,
-     r_date     date			default sysdate
+     hit        number(3)       default 0
      );
  
      

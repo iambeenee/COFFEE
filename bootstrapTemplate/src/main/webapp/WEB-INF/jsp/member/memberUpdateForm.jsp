@@ -4,9 +4,9 @@
 
 <style>
 /* 한글 폰트 */
-	h1{
-		font-family: "Open Sans", sans-serif;
-	}
+h1 {
+	font-family: "Open Sans", sans-serif;
+}
 
 /* Full-width input fields */
 input {
@@ -31,7 +31,7 @@ button {
 }
 
 button:hover {
-  background-color: #e69c00;
+	background-color: #e69c00;
 }
 
 /* TABLE */
