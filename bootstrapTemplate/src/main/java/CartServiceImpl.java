@@ -74,14 +74,27 @@ public class CartServiceImpl extends DAO implements CartService {
 			psmt = conn.prepareStatement(sql);
 			
 			psmt.setString(1, vo.getId());
+			psmt.setInt(2, vo.getPno());
+			psmt.setInt(3, vo.getQuantity());
+			psmt.setInt(4, vo.getAmount());
+			n = psmt.executeUpdate();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
 		}
-		return;
+		return n;
 	}
 
 	@Override
 	public int updateCart(CartVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		// 장바구니 수정
+		String sql = "UPDATE cart SET quantity = ?, amount = ? where c_no = ?";
+		int n = 0;
+		try {
+			psmt = conn.prepareStatement(sql);
+		}
+		return n;
 	}
 
 	@Override
