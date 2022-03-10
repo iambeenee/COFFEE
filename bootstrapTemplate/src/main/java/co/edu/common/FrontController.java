@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.edu.aboutus.AboutUs;
+import co.edu.cart.web.AddToCart;
 import co.edu.cart.web.CartList;
+import co.edu.cart.web.OrderForm;
 import co.edu.member.web.MemberJoinForm;
 import co.edu.member.web.MemberList;
 import co.edu.member.web.MemberLogin;
@@ -75,7 +77,11 @@ public class FrontController extends HttpServlet {
 		map.put("/productDetail.do", new ProductDetail()); //상품상세페이지
 		
 		//CART
-		map.put("/cartList.do", new CartList());    //장바구니
+		map.put("/cartList.do", new CartList());    //장바구니 리스트
+		map.put("/addToCart.do", new AddToCart());	//장바구니에 상품 추가
+		//장바구니 비우기
+		
+		map.put("/orderForm.do", new OrderForm());  //장바구니에 있는 상품 주문
 		
 		//NOTICE
 		map.put("/noticeList.do", new NoticeList()); // 리스트

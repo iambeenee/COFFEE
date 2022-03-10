@@ -5,8 +5,8 @@ nomaxvalue
 nominvalue;
 
 create table orders (
-	order_no   number        primary key,
-	id         varchar2(30)  foreign key for members(id),
+	order_no   number        not null primary key,
+	id         varchar2(30)  not null references members(id),
 	order_date date          sysdate
 );
 

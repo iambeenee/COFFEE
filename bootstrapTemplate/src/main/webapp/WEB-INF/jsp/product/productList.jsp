@@ -4,8 +4,9 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!-- food section -->
+
 <body class="sub_page">
-<section class="food_section layout_padding">
+	<section class="food_section layout_padding">
 		<div class="container">
 			<div class="heading_container heading_center">
 				<h2>Products List</h2>
@@ -29,16 +30,15 @@
 							<div class="box">
 								<div>
 									<div class="img-box">
-										<a href="productDetail.do?pno=${product.pno }"> <img
-											src="images/${product.image }"></a>
+										<a href="productDetail.do?pno=${product.pno}">
+											<img src="images/${product.image}"></a>
 									</div>
 									<div class="detail-box">
 										<h5>${product.pname}</h5>
 										<p style="height: 50px">${product.pcontent}</p>
 										<div class="options">
 											<h6>
-												<fmt:formatNumber value="${product.price}"
-													pattern="###,###,###" />
+												<fmt:formatNumber value="${product.price}" pattern="###,###,###" />
 												원
 											</h6>
 											<a href=""> </a>

@@ -24,9 +24,9 @@ public class ProductUpload implements DbCommand {
 		vo.setPrice(Integer.parseInt(request.getParameter("price")));
 		vo.setPcontent(request.getParameter("pcontent"));
 		vo.setImage(request.getParameter("image"));
-		
-		
+				
 		int n = productDAO.insertProduct(vo);
+		
 		if(n != 0) {
 			return "productList.do";
 		} else {
