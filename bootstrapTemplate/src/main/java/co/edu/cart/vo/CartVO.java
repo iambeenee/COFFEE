@@ -1,13 +1,15 @@
 package co.edu.cart.vo;
 
-public class CartVO {
+import co.edu.product.ProductVO;
+
+public class CartVO extends ProductVO {
 	
 	
 	private int cno;
 	private String id;
-	private int pno;
 	private int quantity;
 	private int amount;
+	
 	
 	
 	public int getCno() {
@@ -22,12 +24,7 @@ public class CartVO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public int getPno() {
-		return pno;
-	}
-	public void setPno(int pno) {
-		this.pno = pno;
-	}
+
 	public int getQuantity() {
 		return quantity;
 	}
