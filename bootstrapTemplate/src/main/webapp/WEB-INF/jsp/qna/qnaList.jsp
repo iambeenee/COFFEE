@@ -61,7 +61,7 @@ button:hover {
 				<br />
 				<div>
 					<c:if test="${not empty id && author eq 'user' }">
-						<button type="submit" onClick="location.href='#'">등록</button>
+						<button type="submit" onClick="location.href='qnaInsertForm.do'">등록</button>
 					</c:if>
 				</div>
 			</div>
@@ -71,8 +71,12 @@ button:hover {
 
 <script type="text/javascript">
 	function formSubmit(qNo){
-		frm.qNo.value = qNo;
-		frm.id.calue = id;
+		if(frm.qNo.value = qNo){
+			if(frm.id.value != id;){
+				alert('읽기권한이 없습니다.');
+				return;
+			}
+		}
 		frm.submit();
 	}
 </script>

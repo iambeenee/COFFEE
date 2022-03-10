@@ -8,6 +8,7 @@ public class QnaVO {
 	private String qContent;
 	private String qDate;
 	private int hit;
+	private int qRep;
 	
 	//
 	public int getqNo() {
@@ -45,5 +46,11 @@ public class QnaVO {
 	}
 	public void setHit(int hit) {
 		this.hit = hit;
+	}
+	public int getqRep() {
+		return qRep;
+	}
+	public void setqRep(int qRep) {
+		this.qRep = qRep;
 	}
 }

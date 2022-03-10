@@ -57,13 +57,22 @@ button:hover {
 							<th>CONTENT</th>
 							<td>${qna.qContent }</td>
 						</tr>
+						<tr>
+							<th>┗ REPLY</th>
+							<td>${qna.qContent }</td>
+						</tr>
 					</table>
 				</div>
-				<br/>
+				<br />
 				<div>
 					<button type="button" onclick="location.href='qnaList.do'">목록보기</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<button type="button" onclick="location.hef='#'">삭제하기</button>
+					<c:if test="${ }">
+						<button type="button" onclick="location.hef='#'">삭제하기</button>
+					</c:if>
+					<c:if test="${author eq 'admin }">
+						<button type="button" onclick="location.href='#'">답변등록</button>
+					</c:if>
 				</div>
 			</div>
 		</div>

@@ -14,7 +14,8 @@ create table qna (
      q_subject  varchar2(50)    not null,
      q_content  varchar2(3000)	not null,
      q_date     date            default sysdate,
-     hit        number(3)       default 0
+     hit        number(3)       default 0,
+     q_rep		number(5)		default null
      );
      
 --쿼리문 예시
