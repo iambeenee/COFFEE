@@ -59,7 +59,7 @@ button:hover {
 						</tr>
 						<tr>
 							<th>┗ REPLY</th>
-							<td>${qna.qContent }</td>
+							<td>${qna.qRep }</td>
 						</tr>
 					</table>
 				</div>

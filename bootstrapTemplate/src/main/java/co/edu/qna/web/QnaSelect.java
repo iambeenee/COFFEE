@@ -15,7 +15,7 @@ public class QnaSelect implements DbCommand {
 		// Q&A 선택 - 세부내역보기
 		QnaService dao = new QnaServiceImpl();
 		QnaVO vo = new QnaVO();
-		vo.setqNo(Integer.parseInt(request.getParameter("qno")));
+		vo.setqNo(Integer.parseInt(request.getParameter("qNo")));
 		vo = dao.selectQna(vo);
 		request.setAttribute("qna", vo);
 		

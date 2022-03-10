@@ -43,7 +43,7 @@ public class QnaServiceImpl extends DAO implements QnaService {
 	@Override
 	public QnaVO selectQna(QnaVO vo) {
 		// 단건조회
-		String sql = "SELECT ID, Q_SUBJECT, Q_CONTENT, Q_DATE, HIT, Q_REP FROM QNA WHERE Q_REP = ?";
+		String sql = "SELECT ID, Q_SUBJECT, Q_CONTENT, Q_DATE, HIT, Q_REP FROM QNA START WITH Q_NO = ? CONNECT BY PRIOR Q_NO = Q_REP";
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, vo.getqNo());

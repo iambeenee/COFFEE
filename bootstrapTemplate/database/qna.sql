@@ -31,3 +31,8 @@ select lpad('*',  2*level) a, q_no, id, q_subject, q_content
 from qna
 start with q_rep is null
 connect by prior q_no = q_rep;
+
+SELECT Q_NO, ID, Q_SUBJECT, Q_CONTENT, Q_DATE, HIT, Q_REP 
+FROM QNA
+START WITH Q_NO = 4
+CONNECT BY PRIOR Q_NO = Q_REP;

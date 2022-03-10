@@ -34,7 +34,7 @@ button:hover {
 				</div>
 				<br />
 					<form id="frm" name="frm" action="qnaSelect.do" method="POST">
-						<input type="hidden" id="id" name="qno">
+						<input type="hidden" id="qNo" name="qNo">
 					</form>
 				<br />
 				<div>
@@ -69,11 +69,8 @@ button:hover {
 </body>
 
 <script type="text/javascript">
-	function formSubmit(id){
-		if(frm.id.value = id){
+	function formSubmit(qNo){
+		frm.qNo.value = qNo
 		frm.submit();
-		} else {			
-			alert("권한이 없습니다.");
-		}
 	}
 </script>
