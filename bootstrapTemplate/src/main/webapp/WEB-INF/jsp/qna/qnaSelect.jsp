@@ -59,7 +59,9 @@ button:hover {
 						</tr>
 						<tr>
 							<th>┗ REPLY</th>
-							<td>${qna.qRep }</td>
+							<c:if test="${qna.qNo eq qna.qRep }">
+								<td>jjjj</td>
+							</c:if>
 						</tr>
 					</table>
 				</div>
