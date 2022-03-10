@@ -4,10 +4,15 @@ import java.util.List;
 
 public interface CartService {
 	
-	List<CartVO> selectCartList();		//장바구니에 담긴 상품 전체보기
-	CartVO selectCart(CartVO vo); 		//한건조회
-	public int insertCart(CartVO vo); 	//장바구니에 상품 추가
-	public int updateCart(CartVO vo); 	//장바구니 상품 정보(수량,가격) 수정
-	public int deleteCart(CartVO vo); 	//장바구니 상품 삭제
+	List<CartVO> cartMoney();		
+	void insert(CartVO vo);             //장바구니 추가
+	List<CartVO> listCart(String id);   //사용자의 장바구니에 담긴 상품 전체보기
+	void delete(int cno);				//장바구니 개별 삭제
+	void deleteAll(String id);			//장바구니 비우기
+	void update(int cno); 				
+	int sumMoney(String id);			//장바구니 금액 합계
+	int countCart(String id, int pno);  //장바구니 상품 갯수
+	void updateCart(CartVO vo);			//장바구니 수정
+	void modifyCart(CartVO vo);
 	
 }

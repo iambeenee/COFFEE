@@ -44,7 +44,7 @@ button:hover {
 
 <script type="text/javascript">
 	function deleteItemBtn() {
-		if (confirm("장바구니에서 해당 상품을 삭제하시겠습니까?")) {
+		if (confirm("선택한 상품을 삭제하시겠습니까?")) {
 			//javascript form submit
 			document.getElementById("deleteItemForm").submit();
 			//command(deleteCart)와 itemNo(${item.itemNo})이 front로 제출된다.
@@ -57,11 +57,12 @@ button:hover {
 		alert("결제 API를 발급 받으시기 바랍니다.");
 	}
 
-	function fnClear() {
-		if (confirm("장바구니를 비우시겠습니까?")) {
-			location.href = "CartClear.";
+	function fnClear(){
+		if(confirm("장바구니를 비우시겠습니까?")) {
+			return "CartClear.do";
+		} else {
+			return;
 		}
-	}
 
 	function fnGo() {
 		location.href = "ShopMallMain.jsp";
@@ -84,10 +85,11 @@ button:hover {
 
 						<c:otherwise>
 							<form id="frm" name="frm" action="orderForm.do" method="POST">
-
+								<input type='button' value='선택 상품 삭제' onclick='deleteItemBtn()'>
+								<input type='button' value='장바구니 비우기' onclick='fnClear();' />
 								<table>
 									<tr>
-										<th width="60">선택</th>
+										<th width="60"><input type="checkbox"></th>
 										<th width="80">이미지</th>
 										<th width="400">상품명</th>
 										<th width="50">단가</th>
@@ -110,12 +112,19 @@ button:hover {
 								</table>
 								<br />
 								<div>총 결제 금액 : ${totalAcount }</div>
+								<input type='button' value='결제하기' onclick='fnPay();' />
+								<table>
+							
+							<tr>
+							<td colspan='4'>
+							<input type='button' value='쇼핑 계속하기' onclick='fnGo();' />
+							</td>
+						    </tr>
+					</table>
 							</form>
 						</c:otherwise>
 					</c:choose>
-					<input type='button' value='결제하기' onclick='fnPay()' /> <input
-						type='button' value='장바구니 비우기' onclick='fnClear()' /> <input
-						type='button' value='쇼핑 계속하기' onclick='fnGo()' />
+					
 
 				</div>
 			</div>

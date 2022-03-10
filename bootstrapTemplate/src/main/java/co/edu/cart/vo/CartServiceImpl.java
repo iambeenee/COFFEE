@@ -20,7 +20,7 @@ public class CartServiceImpl extends DAO implements CartService {
 		// 장바구니 전체 조회
 		List<CartVO> cart = new ArrayList<>();
 		CartVO vo;
-		String sql = "select c.c_no, c.id, c.quantity, c.amount, p.* from products p, cart c\r\n"
+		String sql = "select c.c_no, c.id, p.price, c.quantity, c.amount, p.* from products p, cart c\r\n"
 				+ "where p.p_no = c.p_no ORDER BY c.c_no";
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -30,6 +30,7 @@ public class CartServiceImpl extends DAO implements CartService {
 				vo.setCno(rs.getInt("c_no"));
 				vo.setId(rs.getString("id"));
 				vo.setPno(rs.getInt("p_no"));
+				vo.setPrice(rs.getInt("price"));
 				vo.setQuantity(rs.getInt("quantity"));
 				vo.setAmount(rs.getInt("amount"));
 				vo.setPname(rs.getString("p_name"));

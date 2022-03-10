@@ -6,30 +6,17 @@ nominvalue;
 
 
 create table cart (
-	c_no         number        primary key,
-	id           varchar2(30)  REFERENCES members(id),
-	p_no         number(5)     REFERENCES products(p_no),
-	quantity     number(5)     not null,
-	amount       number(10)    not null
+	c_no         number        not null 	primary key,
+	id           varchar2(30)  not null 	references members(id),
+	p_no         number	       not null 	references products(p_no),
+	amount       number        default 0
 );
 
+-- 3개의 테이블(memebers, products, cart)을 join한다.
+select name, image, p_name, price, amount, price*amount money
+from   members m, products p, cart c
+where  m.id = c.id and p.p_no = c.p_no;
 
 
-
---쿼리문 예시
-
-insert into cart values (cart_seq.nextval, 'user1', 'p001',10);
-insert into cart values (cart_seq.nextval, 'user1', 'p021',10);
-insert into cart values (cart_seq.nextval, 'user1', 'p041',10);
-insert into cart values (cart_seq.nextval, 'user1', 'p101',10);
-
-
-insert into cart values (cart_seq.nextval, 'user10', 'p001',10);
-insert into cart values (cart_seq.nextval, 'user10', 'p021',10);
-insert into cart values (cart_seq.nextval, 'user10', 'p041',10);
-insert into cart values (cart_seq.nextval, 'user10', 'p101',10);
-
-
-select * from cart where id = 'user1';
 
 
