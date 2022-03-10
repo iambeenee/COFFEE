@@ -34,7 +34,10 @@ import co.edu.product.web.ProductDetail;
 import co.edu.product.web.ProductForm;
 import co.edu.product.web.ProductList;
 import co.edu.product.web.ProductUpload;
+import co.edu.qna.web.QnaInsert;
+import co.edu.qna.web.QnaInsertForm;
 import co.edu.qna.web.QnaList;
+import co.edu.qna.web.QnaSelect;
 import co.edu.member.web.AjaxIdCheck;
 import co.edu.member.web.Logout;
 
@@ -89,6 +92,11 @@ public class FrontController extends HttpServlet {
 		
 		//Q&A
 		map.put("/qnaList.do", new QnaList()); // 리스트
+		map.put("/qnaSelect.do", new QnaSelect()); // 선택 - 세부내역보기
+		map.put("/qnaInsertForm.do", new QnaInsertForm()); // 등록 폼 호출
+		map.put("/qnaInsert.do", new QnaInsert()); // 등록 처리
+		// 삭제 처리
+		// 답변 여부
 		
 
 	}

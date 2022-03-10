@@ -13,7 +13,7 @@ public class QnaList implements DbCommand {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// qna 리스트 호출
 		QnaService qDao = new QnaServiceImpl();
-		request.setAttribute("qna", qDao.selectQnaList());
+		request.setAttribute("qnas", qDao.selectQnaList());
 		
 		return "qna/qnaList.tiles";
 	}

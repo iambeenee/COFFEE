@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import co.edu.common.DAO;
-import co.edu.member.MemberVO;
 
 public class QnaServiceImpl extends DAO implements QnaService {
 	private PreparedStatement psmt;
@@ -17,20 +16,20 @@ public class QnaServiceImpl extends DAO implements QnaService {
 	public List<QnaVO> selectQnaList() {
 		// 전체조회
 		List<QnaVO> qna = new ArrayList<>();
-		QnaVO vo;
-		String sql = "SELECT * FROM QNA ORDER BY QNO";
+		QnaVO vo = new QnaVO();
+		String sql = "SELECT * FROM QNA WHERE Q_REP IS NULL";
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				vo = new QnaVO();
 				vo.setqNo(rs.getInt("q_no"));
-				vo.setqName(rs.getString("q_name"));
+				vo.setId(rs.getString("id"));
 				vo.setqSubject(rs.getString("q_subject"));
 				vo.setqContent(rs.getString("q_content"));
-				vo.setqRep(rs.getString("q_rep"));
 				vo.setqDate(rs.getString("q_date"));
-				vo.setHit(rs.getShort("hit"));
+				vo.setHit(rs.getInt("hit"));
+				vo.setqRep(rs.getInt("q_rep"));
 				qna.add(vo);
 			}
 		} catch (SQLException e) {
@@ -44,18 +43,18 @@ public class QnaServiceImpl extends DAO implements QnaService {
 	@Override
 	public QnaVO selectQna(QnaVO vo) {
 		// 단건조회
-		String sql = "SELECT * FROM QNA WHERE Q_NO = ?";
+		String sql = "SELECT ID, Q_SUBJECT, Q_CONTENT, Q_DATE, HIT, Q_REP FROM QNA WHERE Q_NO = ?";
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, vo.getqNo());
 			rs = psmt.executeQuery();
 			if (rs.next()) {
-				vo.setqNo(rs.getInt("q_no"));
-				vo.setqName(rs.getString("q_name"));
+				vo.setId(rs.getString("id"));
 				vo.setqSubject(rs.getString("q_subject"));
 				vo.setqContent(rs.getString("q_content"));
-				vo.setqRep(rs.getString("q_rep"));
 				vo.setqDate(rs.getString("q_date"));
+				vo.setHit(rs.getInt("hit"));
+				vo.setqRep(rs.getInt("q_rep"));
 				addCount(vo.getqNo());
 			}
 		} catch (SQLException e) {
@@ -81,13 +80,12 @@ public class QnaServiceImpl extends DAO implements QnaService {
 
 	@Override
 	public int insertQna(QnaVO vo) {
-		// qna 등록
-		MemberVO MVO = new MemberVO();
-		String sql = "INSERT INTO QNA(Q_NO, Q_NAME, Q_SUBJECT, Q_CONTENT, Q_DATE, HIT) VALUES(QNA_SEQ.NEXTVAL, ?, ?, ?, SYSDATE, 0)";
+		// 등록
+		String sql = "INSERT INTO QNA(Q_NO, ID, Q_SUBJECT, Q_CONTENT, Q_DATE, HIT) VALUES (QNA_SEQ.NEXTVAL, ?, ?, ?, SYSDATE, 0)";
 		int n = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, MVO.getId());
+			psmt.setString(1, vo.getId());
 			psmt.setString(2, vo.getqSubject());
 			psmt.setString(3, vo.getqContent());
 			n = psmt.executeUpdate();
@@ -101,19 +99,8 @@ public class QnaServiceImpl extends DAO implements QnaService {
 
 	@Override
 	public int deleteQna(QnaVO vo) {
-		// qna 삭제
-		String sql = "DELETE FROM QNA WHERE Q_NO = ?";
-		int n = 0;
-		try {
-			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, vo.getqNo());
-			n = psmt.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		return n;
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	private void close() {
