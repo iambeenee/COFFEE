@@ -44,6 +44,7 @@ th {
 				</div>
 				<br />
 				<form id="frm" name="frm" action="qnaInsert.do" method="POST">
+					<input type="hidden" id="id" name="id">
 					<div>
 						<table>
 							<tr>

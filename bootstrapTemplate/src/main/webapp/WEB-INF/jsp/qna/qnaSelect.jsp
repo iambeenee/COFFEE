@@ -67,10 +67,10 @@ button:hover {
 				<div>
 					<button type="button" onclick="location.href='qnaList.do'">목록보기</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<c:if test="${ }">
-						<button type="button" onclick="location.hef='#'">삭제하기</button>
-					</c:if>
-					<c:if test="${author eq 'admin }">
+					<%-- <c:if test="${ }">
+						<button type="button" onclick="location.hef='qnaDelete.do'">삭제하기</button>
+					</c:if> --%>
+					<c:if test="${author eq 'admin' }">
 						<button type="button" onclick="location.href='#'">답변등록</button>
 					</c:if>
 				</div>

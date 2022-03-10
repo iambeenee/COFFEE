@@ -34,8 +34,7 @@ button:hover {
 				</div>
 				<br />
 					<form id="frm" name="frm" action="qnaSelect.do" method="POST">
-						<input type="hidden" id="qNo" name="qNo">
-						<input type="hidden" id="id" name="id">
+						<input type="hidden" id="id" name="qno">
 					</form>
 				<br />
 				<div>
@@ -48,7 +47,7 @@ button:hover {
 							<th width="50">Hit</th>
 						</tr>
 						<c:forEach items="${qnas }" var="qna">
-							<tr onclick="formSubmit(${qna.qNo})">
+							<tr onClick="formSubmit('${qna.qNo}')">
 								<td>${qna.qNo}</td>
 								<td>${qna.qSubject }</td>
 								<td>${qna.id }</td>
@@ -70,13 +69,11 @@ button:hover {
 </body>
 
 <script type="text/javascript">
-	function formSubmit(qNo){
-		if(frm.qNo.value = qNo){
-			if(frm.id.value != id;){
-				alert('읽기권한이 없습니다.');
-				return;
-			}
-		}
+	function formSubmit(id){
+		if(frm.id.value = id){
 		frm.submit();
+		} else {			
+			alert("권한이 없습니다.");
+		}
 	}
 </script>

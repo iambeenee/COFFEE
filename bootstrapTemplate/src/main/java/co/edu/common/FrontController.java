@@ -91,7 +91,7 @@ public class FrontController extends HttpServlet {
 		map.put("/qnaSelect.do", new QnaSelect()); // 선택 - 세부내역보기
 		map.put("/qnaInsertForm.do", new QnaInsertForm()); // 등록 폼 호출
 		map.put("/qnaInsert.do", new QnaInsert()); // 등록 처리
-		// 삭제 처리
+		//map.put("/qnaDelete.do", new QnaDelete()); // 삭제 처리
 		// 답변 여부
 		
 
