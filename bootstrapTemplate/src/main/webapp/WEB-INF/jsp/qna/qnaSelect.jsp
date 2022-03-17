@@ -42,36 +42,35 @@ button:hover {
 				</div>
 				<br />
 				<div>
+				<input type="hidden" id="id" name="id">
 					<table>
 						<tr>
 							<th>DATE</th>
-							<td>${qna.qDate }</td>
+							<td>${origin.qDate }</td>
 							<th>HIT</th>
-							<td>${qna.hit }</td>
+							<td>${origin.hit }</td>
 						</tr>
 						<tr>
 							<th>SUBJECT</th>
-							<td>${qna.qSubject }</td>
+							<td>${origin.qSubject }</td>
 						</tr>
 						<tr>
 							<th>CONTENT</th>
-							<td>${qna.qContent }</td>
+							<td>${origin.qContent }</td>
 						</tr>
 						<tr>
 							<th>┗ REPLY</th>
-							<c:if test="${qna.qNo eq qna.qRep }">
-								<td>jjjj</td>
-							</c:if>
+							<td>${reply.qReply }</td>
+							<th>DATE</th>
+							<td>${reply.qDate }</td>
 						</tr>
 					</table>
 				</div>
-				<br />
+				<br /> <br />
 				<div>
 					<button type="button" onclick="location.href='qnaList.do'">목록보기</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<%-- <c:if test="${ }">
-						<button type="button" onclick="location.hef='qnaDelete.do'">삭제하기</button>
-					</c:if> --%>
+					<button type="button" onclick="qnaDelete(event)">삭제하기</button>
 					<c:if test="${author eq 'admin' }">
 						<button type="button" onclick="location.href='#'">답변등록</button>
 					</c:if>
@@ -80,3 +79,10 @@ button:hover {
 		</div>
 	</section>
 </body>
+
+<script>
+	function qnaDelete(e){
+		e.preventDefault();
+		if()
+	}
+</script>

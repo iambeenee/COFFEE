@@ -12,15 +12,15 @@ public class AjaxIdCheck implements DbCommand {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// Ajax를 이용한 아이디 중복체크
-				MemberService memberDao = new MemberServiceImpl();
-				String id = request.getParameter("id");
-				
-				boolean b = memberDao.isIdcheck(id);
-				
-				if (b) {
-					return "ajax:1"; // 사용가능한 아이디
-				} else {
-					return "ajax:0"; // 이미존재하는 아이디
-				}
-			}
+		MemberService memberDao = new MemberServiceImpl();
+		String id = request.getParameter("id");
+
+		boolean b = memberDao.isIdcheck(id);
+
+		if (b) {
+			return "ajax:1"; // 사용가능한 아이디
+		} else {
+			return "ajax:0"; // 이미존재하는 아이디
+		}
 	}
+}

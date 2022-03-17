@@ -1,5 +1,8 @@
 package co.edu.qna.web;
 
+import java.util.HashMap;
+import java.util.Set;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,9 +19,11 @@ public class QnaSelect implements DbCommand {
 		QnaService dao = new QnaServiceImpl();
 		QnaVO vo = new QnaVO();
 		vo.setqNo(Integer.parseInt(request.getParameter("qNo")));
-		vo = dao.selectQna(vo);
-		request.setAttribute("qna", vo);
+		HashMap<String, QnaVO> map = dao.selectQna(vo);
 		
+		request.setAttribute("origin", map.get("Origin"));
+		request.setAttribute("reply", map.get("Reply"));
+
 		return "qna/qnaSelect.tiles";
 	}
 

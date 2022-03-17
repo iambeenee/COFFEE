@@ -43,8 +43,8 @@ th {
 					<h2>Q&A</h2>
 				</div>
 				<br />
-				<form id="frm" name="frm" action="qnaInsert.do?id=${id }" method="POST">
-					<input type="hidden" id="id" name="id">
+				<form id="frm" name="frm" action="qnaInsert.do" method="POST">
+					<input type="hidden" id="id" name="id" value=${id }>
 					<div>
 						<table>
 							<tr>

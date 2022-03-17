@@ -4,7 +4,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import co.edu.common.DAO;
 
@@ -41,29 +43,42 @@ public class QnaServiceImpl extends DAO implements QnaService {
 	}
 
 	@Override
-	public QnaVO selectQna(QnaVO vo) {
+	public HashMap<String, QnaVO> selectQna(QnaVO vo1) {
 		// 단건조회
-		String sql = "SELECT Q_NO, ID, Q_SUBJECT, Q_CONTENT, Q_DATE, HIT, Q_REP FROM QNA START WITH Q_NO = ? CONNECT BY PRIOR Q_NO = Q_REP";
+		HashMap<String, QnaVO> map = new HashMap<>();
+		String sql = "select * from (\r\n"
+				+ "select 'Origin' origin, q_no, id, q_subject, q_content, q_date, hit, '' q_reply from qna\r\n"
+				+ "where q_no = ?\r\n" //
+				+ "union all\r\n"//
+				+ "select 'Reply' origin, q_no, null id, null q_subject, null q_content, q_date, null hit, q_content q_reply  from qna\r\n"
+				+ "where q_rep = ?)\r\n"//
+				+ "group by origin, q_no, id, q_subject, q_content, q_date, hit, q_reply";
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, vo.getqNo());
+			psmt.setInt(1, vo1.getqNo());
+			psmt.setInt(2, vo1.getqNo());
 			rs = psmt.executeQuery();
-			if (rs.next()) {
+
+			while (rs.next()) {
+				QnaVO vo = new QnaVO();
+				String category = rs.getString("origin");
 				vo.setqNo(rs.getInt("q_no"));
 				vo.setId(rs.getString("id"));
 				vo.setqSubject(rs.getString("q_subject"));
 				vo.setqContent(rs.getString("q_content"));
 				vo.setqDate(rs.getString("q_date"));
 				vo.setHit(rs.getInt("hit"));
-				vo.setqRep(rs.getInt("q_rep"));
+				vo.setqReply(rs.getString("q_reply"));
 				addCount(vo.getqNo());
+
+				map.put(category, vo);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		return vo;
+		return map;
 	}
 
 	public void addCount(int qNo) {
@@ -75,7 +90,7 @@ public class QnaServiceImpl extends DAO implements QnaService {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			close();
+//			close();
 		}
 	}
 
